@@ -1,0 +1,41 @@
+40
+Other GO 400 none 0
+Property Mediterranean_Avenue 60 none 1 false 2 50 10 30 90 250 0 Brown
+Other Community_Chest 0 none 2
+Property Baltic_Avenue 60 none 3 false 4 50 20 60 180 450 0 Brown
+Other Income_Tax 100 none 4
+Railroad Reading_Railroad 200 none 5 25 50 100 200
+Property Oriental_Avenue 100 none 6 false 6 50 30 90 270 550
+Other Chance 0 none 7
+Property Vermont_Avenue 100 none 8 false 6 50 30 90 270 550
+Property Connecticut_Avenue 120 none 9 false 8 50 40 100 300 600
+Other Jail 0 none 10
+Property St.Charles_Place 140 none 11 false 10 100 50 150 450 750
+Utility Electric_Company 150 none 12
+Property States_Avenue 140 none 13 false 10 100 50 150 450 750
+Property Virginia_Avenue 160 none 14 false 12 100 60 180 500 900
+Railroad Pennsylvania_Railroad 200 none 15 25 50 100 200
+Property St.James_Place 180 none 16 false 14 100 70 200 550 950
+Other Community_Chest 0 none 17
+Property Tennessee_Avenue 180 none 18 false 14 100 70 200 550 950
+Property New_York_Avenue 200 none 19 false 16 100 80 220 600 1000
+Other Free_Parking 0 none 20
+Property Kentucky_Avenue 220 none 21 false 18 150 90 250  700 1050
+Other Chance 0 none 22
+Property Indiana_Avenue 220 none 23 false 18 150 90 250 700 1050
+Property Illinois_Avenue 240 none 24 false 20 150 100 300 750 1100
+Railroad B&O_Railroad 200 none 25 25 50 100 200
+Property Atlantic_Avenue 260 none 26 false 22 150 110 330 800 1150
+Property Ventnor_Avenue 260 none 27 false 22 150 110 330 800 1150
+Utility Water_Works 150 none 28
+Property Marvin_Gardens 280 none 29 false 24 150 120 360 850 1200
+Other Go_To_Jail 0 none 30
+Property Pacific_Avenue 300 none 31 false 26 200 130 390 900 1275
+Property North_Carolina_Avenue 300 none 32 false 26 200 130 390 900 1275
+Other Community_Chest 0 none 33
+Property Pennsylvania_Avenue 320 none 34 false 28 200 150 450 1000 1400
+Railroad Short_Line 200 none 35 25 50 100 200
+Other Chance 0 none 36
+Property Park_Place 350 none 37 false 35 200 175 500 1100 1500
+Other Luxury_Tax 200 none 38
+Property Boardwalk 400 none 39 false 50 200 200 600 1400 2000
