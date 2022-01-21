@@ -7,7 +7,7 @@ import java.io.IOException;
 public class MonopDriver2
 	{
 
-		static BoardSpace[] board = new BoardSpace[40];
+		static BoardSpace2[] board = new BoardSpace2[40];
 		
 		public static void main(String[] args)  throws FileNotFoundException
 			{
@@ -38,7 +38,7 @@ public class MonopDriver2
 			        					  int hn = file.nextInt();
 			        					  String co = file.next();
 			        					  
-			        			  board[i] = new Properties("Property", n, o, c, l, d, br, hh, r1, r2, r3, hr, hn, co);
+			        			  board[i] = new Properties2("Property", n, o, c, l, d, br, hh, r1, r2, r3, hr, hn, co);
 			        			  
 			        					
 			        		  }
@@ -55,20 +55,20 @@ public class MonopDriver2
 			        					int r2 = file.nextInt(); 
 			        					int r3 = file.nextInt(); 
 			        					int r4 = file.nextInt();
-			        					board[i] = new Railroads("Railroads", n, o, c, l, r1,r2, r3, r4);
+			        					board[i] = new Railroads2("Railroads", n, o, c, l, r1,r2, r3, r4);
 			        		  }
 			        	  
-			        	  else if(type.equals("Utilities"))
+			        	  else if(type.equals("Utility"))
 			        		  {
 			        			 
 			        			  String n = file.next();
 		        			  		String o = file.next();
 		        			  		int c = file.nextInt();
 		        			  		int l = file.nextInt();
-			        				int dr1 = DiceRoller.rollDice(2,6)*4;
-			        				int dr2 = DiceRoller.rollDice(2,6)*10;
+			        				int dr1 = DiceRoller2.rollDice(2,6)*4;
+			        				int dr2 = DiceRoller2.rollDice(2,6)*10;
 			        					  
-			        			    board[i] = new Utilities("Utilities", n, o, c, l, dr1, dr2);
+			        			    board[i] = new Utilities2("Utilities", n, o, c, l, dr1, dr2);
 			        					  
 			        					
 			        		  }
@@ -79,27 +79,27 @@ public class MonopDriver2
 		        			  		int c = file.nextInt();
 		        			  		int l = file.nextInt();
 			        					  
-		        			  		board[i] = new BoardSpace("Other", n, o, c, l);
+		        			  		board[i] = new BoardSpace2("Other", n, o, c, l);
 			        		  }
 			          }
 			      
 			      
-			      for (BoardSpace b : board)
+			      for (BoardSpace2 b : board)
 			    	  {
 			    		  System.out.println(b);
 
 			    	  }
 			      
-			      Player.greetPlayer();
-			      while(Player.stillPlaying == true)
+			      MonopPlayer2.greetPlayer();
+			      while(MonopPlayer2.stillPlaying == true)
 			    	  {
-			    		  if(Player.inJail == false)
+			    		  if(MonopPlayer2.inJail == false)
 			    			  {
-			    				  Player.turnMenu();
+			    				  MonopPlayer2.turnMenu();
 			    			  }
 			    		  else
 			    			  {
-			    				  Player.inJailTurn();
+			    				  MonopPlayer2.inJailTurn();
 			    			  }
 			    	  }
 
