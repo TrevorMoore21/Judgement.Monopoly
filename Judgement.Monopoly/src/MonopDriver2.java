@@ -68,7 +68,7 @@ public class MonopDriver2
 			        				int dr1 = DiceRoller2.rollDice(2,6)*4;
 			        				int dr2 = DiceRoller2.rollDice(2,6)*10;
 			        					  
-			        			    board[i] = new Utilities2("Utilities", n, o, c, l, dr1, dr2);
+			        			    board[i] = new Utilities2("Utility", n, o, c, l, dr1, dr2);
 			        					  
 			        					
 			        		  }
