@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MonopPlayer2
+
+public class ZooSamsMonopPlayer
 	{
+
 
 		static int playerLocation = 0;
 		static boolean inJail = false;
@@ -358,5 +360,8 @@ public class MonopPlayer2
 							}
 					}
 			}
+		
+		
+		
 		
 	}

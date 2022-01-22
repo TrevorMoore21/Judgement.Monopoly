@@ -1,41 +1,41 @@
 40
 Other GO none 400 0
-Property Mediterranean_Avenue none 60 1 false 2 50 10 30 90 160 250 0 Purple
+Property Mediterranean_Avenue none 60 1 false 2 50 10 30 90 160 250 0 0 Purple
 Other Community_Chest none 0 2
-Property Baltic_Avenue none 60 3 false 4 50 20 60 180 320 450 0 Purple
+Property Baltic_Avenue none 60 3 false 4 50 20 60 180 320 450 0 0 Purple
 Other Income_Tax none 100 4
 Railroad Reading_Railroad none 200 5 25 50 100 200
-Property Oriental_Avenue none 100 6 false 6 50 30 90 270 400 550 0 Light_Blue
+Property Oriental_Avenue none 100 6 false 6 50 30 90 270 400 550 0 0 Light_Blue
 Other Chance none 0 7
-Property Vermont_Avenue none 100 8 false 6 50 30 90 270 400 550 0 Light_Blue
-Property Connecticut_Avenue none 120 9 false 8 50 40 100 300 450 600 0 Light_Blue
+Property Vermont_Avenue none 100 8 false 6 50 30 90 270 400 550 0 0 Light_Blue
+Property Connecticut_Avenue none 120 9 false 8 50 40 100 300 450 600 0 0 Light_Blue
 Other Jail none 0 10
-Property St.Charles_Place none 140 11 false 10 100 50 150 450 625 750 0 Pink
+Property St.Charles_Place none 140 11 false 10 100 50 150 450 625 750 0 0 Pink
 Utility Electric_Company none 150 12 false false
-Property States_Avenue none 140 13 false 10 100 50 150 450 625 750 0 Pink
-Property Virginia_Avenue none 160 14 false 12 100 60 180 500 700 900 0 Pink
+Property States_Avenue none 140 13 false 10 100 50 150 450 625 750 0 0 Pink
+Property Virginia_Avenue none 160 14 false 12 100 60 180 500 700 900 0 0 Pink
 Railroad Pennsylvania_Railroad none 200 15 25 50 100 200
-Property St.James_Place none 180 16 false 14 100 70 200 550 750 950 0 Orange
+Property St.James_Place none 180 16 false 14 100 70 200 550 750 950 0 0 Orange
 Other Community_Chest none 0 17
-Property Tennessee_Avenue none 180 18 false 14 100 70 200 550 750 950 0 Orange
-Property New_York_Avenue none 200 19 false 16 100 80 220 600 800 1000 0 Orange
+Property Tennessee_Avenue none 180 18 false 14 100 70 200 550 750 950 0 0 Orange
+Property New_York_Avenue none 200 19 false 16 100 80 220 600 800 1000 0 0 Orange
 Other Free_Parking none 0 20
-Property Kentucky_Avenue none 220 21 false 18 150 90 250  700 875 1050 0 Red
+Property Kentucky_Avenue none 220 21 false 18 150 90 250  700 875 1050 0 0 Red
 Other Chance none 0 22
-Property Indiana_Avenue none 220 23 false 18 150 90 250 700 875 1050 0 Red
-Property Illinois_Avenue none 240 24 false 20 150 100 300 750 925 1100 0 Red
+Property Indiana_Avenue none 220 23 false 18 150 90 250 700 875 1050 0 0 Red
+Property Illinois_Avenue none 240 24 false 20 150 100 300 750 925 1100 0 0 Red
 Railroad B&O_Railroad none 200 25 25 50 100 200
-Property Atlantic_Avenue none 260 26 false 22 150 110 330 800 975 1150 0 Yellow
-Property Ventnor_Avenue none 260 27 false 22 150 110 330 800 975 1150 0 Yellow
+Property Atlantic_Avenue none 260 26 false 22 150 110 330 800 975 1150 0 0 Yellow
+Property Ventnor_Avenue none 260 27 false 22 150 110 330 800 975 1150 0 0 Yellow
 Utility Water_Works none 150 28 false false
-Property Marvin_Gardens none 280 29 false 24 150 120 360 850 1025 1200 0 Yellow
+Property Marvin_Gardens none 280 29 false 24 150 120 360 850 1025 1200 0 0 Yellow
 Other Go_To_Jail none 0 30
-Property Pacific_Avenue none 300 31 false 26 200 130 390 900 1100 1275 0 Green
-Property North_Carolina_Avenue none 300 32 false 26 200 130 390 900 1100 1275 0 Green
+Property Pacific_Avenue none 300 31 false 26 200 130 390 900 1100 1275 0 0 Green
+Property North_Carolina_Avenue none 300 32 false 26 200 130 390 900 1100 1275 0 0 Green
 Other Community_Chest none 0 33
-Property Pennsylvania_Avenue none 320 34 false 28 200 150 450 1000 1200 1400 0 Green
+Property Pennsylvania_Avenue none 320 34 false 28 200 150 450 1000 1200 1400 0 0 Green
 Railroad Short_Line none 200 35 25 50 100 200
 Other Chance none 0 36
-Property Park_Place none 350 37 false 35 200 175 500 1100 1300 1500 0 Dark_Blue
+Property Park_Place none 350 37 false 35 200 175 500 1100 1300 1500 0 0 Dark_Blue
 Other Luxury_Tax none 200 38
-Property Boardwalk none 400 39 false 50 200 200 600 1400 1700 2000 0 Dark_Blue
+Property Boardwalk none 400 39 false 50 200 200 600 1400 1700 2000 0 0 Dark_Blue

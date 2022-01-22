@@ -36,10 +36,11 @@ public class MonopDriver2
 			        					  int r3 = file.nextInt();
 			        					  int r4 = file.nextInt();
 			        					  int hr = file.nextInt();
-			        					  int hn = file.nextInt();
+			        					  int hown = file.nextInt();
+			        					  int hotn = file.nextInt();
 			        					  String co = file.next();
 			        					  
-			        			  board[i] = new Properties2("Property", n, o, c, l, d, br, hh, r1, r2, r3, r4, hr, hn, co);
+			        			  board[i] = new Properties2("Property", n, o, c, l, d, br, hh, r1, r2, r3, r4, hr, hown, hotn, co);
 			        			  
 			        					
 			        		  }
