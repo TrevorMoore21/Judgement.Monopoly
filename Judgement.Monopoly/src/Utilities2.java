@@ -2,38 +2,40 @@
 public class Utilities2 extends BoardSpace2
 	{
 
-		private int oneOwnedRent;
-		private int twoOwnedRent;
+		private boolean oneOwnedUtility;
+		private boolean twoOwnedUtilities;
 		
-		public Utilities2(String t, String n, String o, int c, int l, int oR, int tR)
+		public Utilities2(String t, String n, String o, int c, int l, boolean ou, boolean tu)
 			{
 				setType(t);
 				setName(n);
 				setOwner(o);
 				setCost(c);
 				setLocation(l);
-				oneOwnedRent = oR;
-				twoOwnedRent = tR;
+				oneOwnedUtility = ou;
+				twoOwnedUtilities = tu;
 			}
 
-		public int getOneOwnedRent()
+		public boolean isOneOwnedUtility()
 			{
-				return oneOwnedRent;
+				return oneOwnedUtility;
 			}
 
-		public void setOneOwnedRent(int oneOwnedRent)
+		public void setOneOwnedUtility(boolean oneOwnedUtility)
 			{
-				this.oneOwnedRent = oneOwnedRent;
+				this.oneOwnedUtility = oneOwnedUtility;
 			}
 
-		public int getTwoOwnedRent()
+		public boolean isTwoOwnedUtilities()
 			{
-				return twoOwnedRent;
+				return twoOwnedUtilities;
 			}
 
-		public void setTwoOwnedRent(int twoOwnedRent)
+		public void setTwoOwnedUtilities(boolean twoOwnedUtilities)
 			{
-				this.twoOwnedRent = twoOwnedRent;
+				this.twoOwnedUtilities = twoOwnedUtilities;
 			}
+
+		
 		
 	}

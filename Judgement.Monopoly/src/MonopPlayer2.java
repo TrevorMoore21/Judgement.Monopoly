@@ -25,12 +25,14 @@ public class MonopPlayer2
 		{
 			System.out.println("What is your name?");
 			playerName = userInput.nextLine();
+			System.out.println();
 			System.out.println("Welcome, " + playerName + "!");
 		}
 		
 		public static void turnMenu()
 		{
-			System.out.println(playerName + ", it's your turn!\nWould you like to...\n1) Roll the dice\n2) View your stats");
+			
+			System.out.println("It's your turn!\nWould you like to...\n\n1) Roll the dice\n2) View your stats");
 			menuInput = userInput.nextInt();
 			
 			if(menuInput == 1)
@@ -50,15 +52,13 @@ public class MonopPlayer2
 		
 		public static void displayPlayerStats()
 		{
-			System.out.println("Your name is: " + playerName);
-			System.out.println("Current balance: $" + playerMoney);
+			//System.out.println("Your name is: " + playerName);
+			System.out.println();
+			System.out.println(playerName + "Current balance: $" + playerMoney);
 			
-			for( int i = 0; i < inventory.size(); i++)
-				{
-					
-					
-					
-				}
+//			for( int i = 0; i < inventory.size(); i++)
+//				{
+//				}
 			
 			
 			
@@ -69,14 +69,12 @@ public class MonopPlayer2
 		
 		public static void movePlayer()
 		{
-			System.out.println("Press space to roll the dice.");
-			//String rollDiceInput = 
 			
 			int playerRoll = DiceRoller2.rollDice(2,6);
 			
 			
 			
-			if((playerLocation + playerRoll) < 39)
+			if((playerLocation + playerRoll) <= 39)
 				{
 					playerLocation += playerRoll;
 				}
@@ -88,7 +86,7 @@ public class MonopPlayer2
 					System.out.println("You passsed GO and collected $200");
 				}
 			
-			System.out.println("You rolled: " + playerRoll + "\nYou landed on " + MonopDriver2.board[playerLocation].getName());
+			System.out.println("You can now move " + playerRoll + " places" + "\nYou landed on " + MonopDriver2.board[playerLocation].getName());
 			
 			landOnSquare();
 			
@@ -108,7 +106,7 @@ public class MonopPlayer2
 				}
 			else
 				{
-					
+					timesRolledDoubles = 0;
 				}
 		}
 
@@ -161,7 +159,7 @@ public class MonopPlayer2
 											}
 										else
 											{
-											//this is broken and I don't know how to fix it at this time
+											
 											((Properties2) MonopDriver2.board[playerLocation]).setNumberOfHousesOwned(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned()+1);
 											}
 									}

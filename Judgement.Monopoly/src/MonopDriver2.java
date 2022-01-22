@@ -24,7 +24,7 @@ public class MonopDriver2
 			        	  if(type.equals("Property"))
 			        		  {
 			        			 
-			        					 String n = file.next();
+			        					  String n = file.next();
 			        					  String o = file.next();
 			        					  int c = file.nextInt();
 			        					  int l = file.nextInt();
@@ -34,11 +34,12 @@ public class MonopDriver2
 			        					  int r1 = file.nextInt();
 			        					  int r2 = file.nextInt();
 			        					  int r3 = file.nextInt();
+			        					  int r4 = file.nextInt();
 			        					  int hr = file.nextInt();
 			        					  int hn = file.nextInt();
 			        					  String co = file.next();
 			        					  
-			        			  board[i] = new Properties2("Property", n, o, c, l, d, br, hh, r1, r2, r3, hr, hn, co);
+			        			  board[i] = new Properties2("Property", n, o, c, l, d, br, hh, r1, r2, r3, r4, hr, hn, co);
 			        			  
 			        					
 			        		  }
@@ -47,7 +48,7 @@ public class MonopDriver2
 			        	  else if(type.equals("Railroad"))
 			        		  {
 			        			  
-			        					  String n = file.next();
+			        					String n = file.next();
 			        			  		String o = file.next();
 			        			  		int c = file.nextInt();
 			        			  		int l = file.nextInt();
@@ -61,20 +62,22 @@ public class MonopDriver2
 			        	  else if(type.equals("Utility"))
 			        		  {
 			        			 
-			        			  String n = file.next();
+			        			    String n = file.next();
 		        			  		String o = file.next();
 		        			  		int c = file.nextInt();
 		        			  		int l = file.nextInt();
-			        				int dr1 = DiceRoller2.rollDice(2,6)*4;
-			        				int dr2 = DiceRoller2.rollDice(2,6)*10;
+		        			  		boolean ou = file.nextBoolean();
+		        			  		boolean tu = file.nextBoolean();
+//			        				int dr1 = DiceRoller2.rollDice(2,6)*4;
+//			        				int dr2 = DiceRoller2.rollDice(2,6)*10;
 			        					  
-			        			    board[i] = new Utilities2("Utility", n, o, c, l, dr1, dr2);
-			        					  
+			        			
+			        			    board[i] = new Utilities2("Utility", n, o, c, l, ou, tu);
 			        					
 			        		  }
 			        	  else if(type.equals("Other")) 
 			        		  {
-			        			  String n = file.next();
+			        			    String n = file.next();
 		        			  		String o = file.next();
 		        			  		int c = file.nextInt();
 		        			  		int l = file.nextInt();
