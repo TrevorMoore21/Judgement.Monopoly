@@ -83,13 +83,6 @@ public class MonopDriver2
 			        		  }
 			          }
 			      
-			      
-			      for (BoardSpace2 b : board)
-			    	  {
-			    		  System.out.println(b);
-
-			    	  }
-			      
 			      MonopPlayer2.greetPlayer();
 			      while(MonopPlayer2.stillPlaying == true)
 			    	  {
