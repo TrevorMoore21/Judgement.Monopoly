@@ -72,8 +72,8 @@ public class ZooMonopPlayer45
 //Move Player	
 				public static void movePlayer()
 					{
-						int playerRoll = 4;
-						//int playerRoll = DiceRoller2.rollDice(2,6);
+						//int playerRoll = 10;
+						int playerRoll = DiceRoller2.rollDice(2,6);
 						
 			//regulating playerLocation
 						if((playerLocation + playerRoll) <= 39)
@@ -92,6 +92,7 @@ public class ZooMonopPlayer45
 						if(MonopDriver2.board[playerLocation].getName().equals("Jail"))
 							{
 								System.out.println("You landed on Jail, but you are just visiting.");
+								turnMenu();
 							}
 						else
 							{
