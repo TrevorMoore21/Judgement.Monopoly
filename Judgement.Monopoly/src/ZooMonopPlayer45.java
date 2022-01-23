@@ -105,7 +105,7 @@ public class ZooMonopPlayer45
 							{
 								if(MonopDriver2.board[playerLocation].getOwner().equals("none"))
 									{
-									System.out.println("This location is not owned, would you like to buy it?\n\n1) Yes\n2) No");
+									System.out.println("This property is not owned, would you like to buy it?\n\n1) Yes\n2) No");
 									menuInput = userInput.nextInt();
 									
 									if(menuInput == 1)
@@ -200,7 +200,7 @@ public class ZooMonopPlayer45
 							{
 								if(MonopDriver2.board[playerLocation].getOwner().equals("none"))
 									{
-									System.out.println("This location is not owned, would you like to buy it?\n1) Yes\n2) No");
+									System.out.println("This utility is not owned, would you like to buy it?\n1) Yes\n2) No");
 									menuInput = userInput.nextInt();
 									
 									if(menuInput == 1)
@@ -235,41 +235,35 @@ public class ZooMonopPlayer45
 												playerMoney -= dr2;
 												turnMenu();
 												
-											}
-										
-				        				
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
+											}		
+						
 										//need to figure out how to search the array for everything that has one specific field
 									}
 							}
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						else if(MonopDriver2.board[playerLocation].getType().equals("Railroad"))
 							{
 								if(MonopDriver2.board[playerLocation].getOwner().equals("none"))
 									{
-									System.out.println("This location is not owned, would you like to buy it?\n1) Yes\n2) No");
+									System.out.println("This railroad is not owned, would you like to buy it?\n\n1) Yes\n2) No");
 									menuInput = userInput.nextInt();
 									
 									if(menuInput == 1)
 										{
+											
+											checkForBankruptcy();
 											MonopDriver2.board[playerLocation].setOwner(playerName);
 											playerMoney -= MonopDriver2.board[playerLocation].getCost();
-											checkForBankruptcy();
 											inventory.add(MonopDriver2.board[playerLocation]);
 										}
 									}
@@ -281,27 +275,42 @@ public class ZooMonopPlayer45
 									{
 										//once again need to figure the comment from above out
 										
-										/*System.out.println("This property is already owned by" + MonopDriver.board[playerLocation].getOwner() + ", you now must pay rent.");
-										if(((Railroads) MonopDriver.board[playerLocation]).getNumberOfHousesOwned() == 1)
+										System.out.println("This property is already owned by " + MonopDriver2.board[playerLocation].getOwner() + ", now you must pay rent.");
+										if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 1)
 											{
-												playerMoney -= ((Railroads) MonopDriver.board[playerLocation]).getOneOwnedRent();
+												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getOneOwnedRent();
 											}
-										else if(((Railroads) MonopDriver.board[playerLocation]).getNumberOfHousesOwned() == 2)
+										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 2)
 											{
-												playerMoney -= ((Railroads) MonopDriver.board[playerLocation]).getTwoOwnedRent();
+												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getTwoOwnedRent();
 											}
-										else if(((Railroads) MonopDriver.board[playerLocation]).getNumberOfHousesOwned() == 3)
+										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 3)
 											{
-												playerMoney -= ((Railroads) MonopDriver.board[playerLocation]).getThreeOwnedRent();
+												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getThreeOwnedRent();
 											}
-										else if(((Railroads) MonopDriver.board[playerLocation]).getNumberOfHousesOwned() == 4)
+										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 4)
 											{
-												playerMoney -= ((Railroads) MonopDriver.board[playerLocation]).getFourOwnedRent();
-											}*/
+												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getFourOwnedRent();
+											}
 										
 										checkForBankruptcy();
 									}
 							}
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						else
 							{
 								if(MonopDriver2.board[playerLocation].getName().equals("GO"))

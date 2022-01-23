@@ -12,7 +12,7 @@ public class MonopDriver2
 		public static void main(String[] args)  throws FileNotFoundException
 			{
 				
-				Scanner file = new Scanner(new File( "AmericanMonopoly.txt" ));
+				Scanner file = new Scanner(new File("AmericanMonopoly.txt" ));
 				int numberOfLines = file.nextInt();
 			     
 			      for( int i = 0; i < numberOfLines; i++ )
@@ -57,7 +57,8 @@ public class MonopDriver2
 			        					int r2 = file.nextInt(); 
 			        					int r3 = file.nextInt(); 
 			        					int r4 = file.nextInt();
-			        					board[i] = new Railroads2("Railroads", n, o, c, l, r1,r2, r3, r4);
+			        					int rro = file.nextInt();
+			        					board[i] = new Railroads2("Railroads", n, o, c, l, r1,r2, r3, r4, rro);
 			        		  }
 			        	  
 			        	  else if(type.equals("Utility"))

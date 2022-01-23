@@ -6,8 +6,9 @@ public class Railroads2 extends BoardSpace2
 		private int twoOwnedRent;
 		private int threeOwnedRent;
 		private int fourOwnedRent;
+		private int numberOfRailroadsOwned;
 		
-		public Railroads2(String t, String n, String o, int c, int l, int onR, int twR, int thR, int foR)
+		public Railroads2(String t, String n, String o, int c, int l, int onR, int twR, int thR, int foR, int rro)
 		{
 			setType(t);
 			setName(n);
@@ -18,6 +19,7 @@ public class Railroads2 extends BoardSpace2
 			twoOwnedRent = twR;
 			threeOwnedRent = thR;
 			fourOwnedRent = foR;
+			numberOfRailroadsOwned = rro;
 		}
 
 		public int getOneOwnedRent()
