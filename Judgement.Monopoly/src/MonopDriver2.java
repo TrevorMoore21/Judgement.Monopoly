@@ -88,19 +88,50 @@ public class MonopDriver2
 			        		  }
 			          }
 			      
-			      MonopPlayer2.greetPlayer();
-			      while(MonopPlayer2.stillPlaying == true)
+//			      MonopPlayer2.greetPlayer();
+//			      while(MonopPlayer2.stillPlaying == true)
+//			    	  {
+//			    		  if(MonopPlayer2.inJail == false)
+//			    			  {
+//			    				  MonopPlayer2.turnMenu();
+//			    			  }
+//			    		  else
+//			    			  {
+//			    				  MonopPlayer2.inJailTurn();
+//			    			  }
+//			    	  }
+
+			      
+			      //THIS IS THE REAL ONE
+			      
+			      
+			      ZooMonopPlayer45.greetPlayer();
+			      while(ZooMonopPlayer45.stillPlaying == true)
 			    	  {
-			    		  if(MonopPlayer2.inJail == false)
+			    		  if(ZooMonopPlayer45.inJail == false)
 			    			  {
-			    				  MonopPlayer2.turnMenu();
+			    				  ZooMonopPlayer45.turnMenu();
 			    			  }
 			    		  else
 			    			  {
-			    				  MonopPlayer2.inJailTurn();
+			    				  ZooMonopPlayer45.inJailTurn();
 			    			  }
 			    	  }
-
+			      
+			      
+//			      ZooMonopPlayer50.greetPlayer();
+//			      while(ZooMonopPlayer50.stillPlaying == true)
+//			    	  {
+//			    		  if(ZooMonopPlayer50.inJail == false)
+//			    			  {
+//			    				  ZooMonopPlayer50.turnMenu();
+//			    			  }
+//			    		  else
+//			    			  {
+//			    				  ZooMonopPlayer50.inJailTurn();
+//			    			  }
+//			    	  }
+			      
 			}
 
 	}

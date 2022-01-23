@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class ZooMonopPlayer45
+public class ZooMonopPlayer50
 	{
 
 		static String playerName;
@@ -61,8 +61,8 @@ public class ZooMonopPlayer45
 				
 				public static void movePlayer()
 					{
-						//int playerRoll = 5;
-						int playerRoll = DiceRoller2.rollDice(2,6);
+						
+						int playerRoll = 5;
 						
 						
 						
@@ -395,6 +395,10 @@ public class ZooMonopPlayer45
 												playerMoney = playerMoney - 10;
 												checkForBankruptcy();
 											}
+									}
+								else
+									{
+										System.out.println(MonopDriver2.board[playerLocation].getType());
 									}
 							}
 					}
