@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import jdk.internal.misc.FileSystemOption;
+
 
 
 public class ZooMonopPlayer45
@@ -240,17 +240,7 @@ public class ZooMonopPlayer45
 										//need to figure out how to search the array for everything that has one specific field
 									}
 							}
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
+
 						else if(MonopDriver2.board[playerLocation].getType().equals("Railroad"))
 							{
 								if(MonopDriver2.board[playerLocation].getOwner().equals("none"))
@@ -265,52 +255,41 @@ public class ZooMonopPlayer45
 											MonopDriver2.board[playerLocation].setOwner(playerName);
 											playerMoney -= MonopDriver2.board[playerLocation].getCost();
 											inventory.add(MonopDriver2.board[playerLocation]);
+											turnMenu();
 										}
 									}
 								else if(MonopDriver2.board[playerLocation].getOwner().equals(playerName))
 									{
 										System.out.println("You already own this railroad");
+										turnMenu();
 									}
 								else
 									{
 										//once again need to figure the comment from above out
 										
 										System.out.println("This property is already owned by " + MonopDriver2.board[playerLocation].getOwner() + ", now you must pay rent.");
-										if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 1)
+										if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfRailroadsOwned() == 1)
 											{
 												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getOneOwnedRent();
 											}
-										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 2)
+										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfRailroadsOwned() == 2)
 											{
 												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getTwoOwnedRent();
 											}
-										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 3)
+										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfRailroadsOwned() == 3)
 											{
 												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getThreeOwnedRent();
 											}
-										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 4)
+										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfRailroadsOwned() == 4)
 											{
 												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getFourOwnedRent();
 											}
 										
 										checkForBankruptcy();
+										turnMenu();
 									}
 							}
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
+	
 						else
 							{
 								if(MonopDriver2.board[playerLocation].getName().equals("GO"))
@@ -322,12 +301,35 @@ public class ZooMonopPlayer45
 									{
 										goToJail();
 									}
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
 								else if(MonopDriver2.board[playerLocation].getName().equals("Free_Parking"))
 									{
-										System.out.println("You won " + freeParkingMoney + "!");
+										System.out.println("You won $" + freeParkingMoney + "!");
 										playerMoney += freeParkingMoney;
 										freeParkingMoney = 0;
 									}
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
 								else if(MonopDriver2.board[playerLocation].getName().equals("Income_Tax") || MonopDriver2.board[playerLocation].getName().equals("Luxury_Tax"))
 									{
 										System.out.println("You have been taxed $" + MonopDriver2.board[playerLocation].getCost());
@@ -347,14 +349,16 @@ public class ZooMonopPlayer45
 										
 										else if(chanceNumber == 2)
 											{
-												System.out.println("You got your secretary pregnant. Pay $50.");
-												playerMoney = playerMoney - 50;
+												System.out.println("You got your secretary pregnant. Pay $300.");
+												playerMoney = playerMoney - 300;
+												checkForBankruptcy();
 											}
 										else
 											{
-												System.out.println("You found $100 on the street.");
-												playerMoney = playerMoney + 100;
+												System.out.println("You found $400 on the street.");
+												playerMoney = playerMoney + 400;
 											}
+										turnMenu();
 									}
 								//community chest
 								else if(MonopDriver2.board[playerLocation].getName().equals("Community Chest"))
@@ -362,19 +366,21 @@ public class ZooMonopPlayer45
 										int chestNumber = (int) (Math.random() * 3) + 1;
 										if(chestNumber == 1)
 											{
-										System.out.println("Your dog needs a surgery. Pay the vet $100.");
-										playerMoney = playerMoney / 2;
+										System.out.println("Your dog needs surgery. Pay the vet $100.");
+										playerMoney -= 100;
+										checkForBankruptcy();
 											}
 										
 										else if(chestNumber == 2)
 											{
-												System.out.println("You have turned to a life of crime. You mugged a teenage girl for $35.");
-												playerMoney = playerMoney + 35;
+												System.out.println("You have turned to a life of crime. You mugged a teenage girl for $5.");
+												playerMoney = playerMoney + 5;
 											}
 										else
 											{
 												System.out.println("You bought the Fortnite battle pass ofr $10.");
 												playerMoney = playerMoney - 10;
+												checkForBankruptcy();
 											}
 									}
 							}

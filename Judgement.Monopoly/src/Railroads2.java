@@ -8,6 +8,8 @@ public class Railroads2 extends BoardSpace2
 		private int fourOwnedRent;
 		private int numberOfRailroadsOwned;
 		
+		
+
 		public Railroads2(String t, String n, String o, int c, int l, int onR, int twR, int thR, int foR, int rro)
 		{
 			setType(t);
@@ -22,6 +24,17 @@ public class Railroads2 extends BoardSpace2
 			numberOfRailroadsOwned = rro;
 		}
 
+		
+		public int getNumberOfRailroadsOwned()
+			{
+				return numberOfRailroadsOwned;
+			}
+
+		public void setNumberOfRailroadsOwned(int numberOfRailroadsOwned)
+			{
+				this.numberOfRailroadsOwned = numberOfRailroadsOwned;
+			}
+		
 		public int getOneOwnedRent()
 			{
 				return oneOwnedRent;

@@ -1,9 +1,9 @@
 40
-Other GO none 400 0
+Other GO none 200 0
 Property Mediterranean_Avenue none 60 1 false 2 50 10 30 90 160 250 0 0 Purple
 Other Community_Chest none 0 2
 Property Baltic_Avenue none 60 3 false 4 50 20 60 180 320 450 0 0 Purple
-Other Income_Tax none 100 4
+Other Income_Tax none 200 4
 Railroad Reading_Railroad none 200 5 25 50 100 200 0
 Property Oriental_Avenue none 100 6 false 6 50 30 90 270 400 550 0 0 Light_Blue
 Other Chance none 0 7
@@ -37,5 +37,5 @@ Property Pennsylvania_Avenue none 320 34 false 28 200 150 450 1000 1200 1400 0 0
 Railroad Short_Line none 200 35 25 50 100 200 0
 Other Chance none 0 36
 Property Park_Place none 350 37 false 35 200 175 500 1100 1300 1500 0 0 Dark_Blue
-Other Luxury_Tax none 200 38
+Other Luxury_Tax none 75 38
 Property Boardwalk none 400 39 false 50 200 200 600 1400 1700 2000 0 0 Dark_Blue
