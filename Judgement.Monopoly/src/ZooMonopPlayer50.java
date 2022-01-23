@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class ZooMonopPlayer50
 	{
-
 		static String playerName;
 		static int playerLocation = 0;
-		static int playerMoney = 1500;
+		static int playerMoney = 10;
 		static int timesRolledDoubles = 0;
 		static int menuInput;
 		static int menuInput2;
@@ -18,15 +17,9 @@ public class ZooMonopPlayer50
 		static boolean stillPlaying = true;
 		static Scanner userInput = new Scanner(System.in);
 		static ArrayList<String> inventory = new ArrayList<String>();
-	
-		
-//		static int numberOfPropertiesOwned;
-//		static int numberOfUtilitiesOwned;
-//		static int numberOfRailroadsOwned;
 		
 		
-		
-		
+//Greet Player
 		public static void greetPlayer()
 			{
 				int introNumber = (int) (Math.random() * 3) + 1;
@@ -49,11 +42,13 @@ public class ZooMonopPlayer50
 				System.out.println("Welcome, " + playerName + "!");
 			}
 		
-		
+//Main Menu
 		public static void turnMenu()
 			{
 				
-				System.out.println("It's your turn! " + playerName + "\nWould you like to...\n\n1) Roll the dice\n2) View your stats");
+				System.out.println("It's your turn " + playerName + "\nWould you like to..."
+						+ "\n\n\t1) Roll the dice"
+						+ "\n\t2) View your stats");
 				menuInput = userInput.nextInt();
 				
 				if(menuInput == 1)
@@ -66,21 +61,20 @@ public class ZooMonopPlayer50
 					}
 				else
 					{
-						System.out.println("That's not an option.\nPlease try again.");
+						System.out.println("That's not an option. Please try again.");
 						turnMenu();
 					}
 			}
 		
 		
 				
-				
+//Move Player	
 				public static void movePlayer()
 					{
-						int playerRoll = 2;
-						//int playerRoll = DiceRoller2.rollDice(2,6);
+						//int playerRoll = 10;
+						int playerRoll = DiceRoller2.rollDice(2,6);
 						
-						
-						
+			//regulating playerLocation
 						if((playerLocation + playerRoll) <= 39)
 							{
 								playerLocation += playerRoll;
@@ -93,12 +87,19 @@ public class ZooMonopPlayer50
 								System.out.println("You can now move " + playerRoll + " places");
 								System.out.println("You passsed GO and collected $200");
 							}
-						
-						
-						System.out.println("You landed on " + MonopDriver2.board[playerLocation].getName());
+			//nuance if land on Jail but just visiting
+						if(MonopDriver2.board[playerLocation].getName().equals("Jail"))
+							{
+								System.out.println("You landed on Jail, but you are just visiting.");
+								turnMenu();
+							}
+						else
+							{
+								System.out.println("You landed on " + MonopDriver2.board[playerLocation].getName());
+							}
 						
 						landOnSquare();
-						
+			//doubles rule (3 doubles == Jail)
 						if(DiceRoller2.doubles == true)
 							{
 								timesRolledDoubles++;
@@ -118,51 +119,44 @@ public class ZooMonopPlayer50
 								timesRolledDoubles = 0;
 							}
 			}
-		
-		
+//Land on Square
 				public static void landOnSquare()
 					{
+//Properties
 						if(MonopDriver2.board[playerLocation].getType().equals("Property"))
 							{
 								if(MonopDriver2.board[playerLocation].getOwner().equals("none"))
 									{
 									
 									System.out.println("This property is not owned, would you like to... "
-											+ "\n\n1) Buy this property"
-											+ "\n2) NOT buy this property"
-											+ "\n3) View property price");
+											+ "\n\n\t1) Buy this property"
+											+ "\n\t2) View property price"
+											+ "\n\t3) End turn");
 				
 									menuInput = userInput.nextInt();
 									
 									if(menuInput == 1)
 										{
-										
-											checkForBankruptcy();
 											MonopDriver2.board[playerLocation].setOwner(playerName);
 											playerMoney -= MonopDriver2.board[playerLocation].getCost();
 											inventory.add(MonopDriver2.board[playerLocation].getName());
+											checkForBankruptcy();
 											turnMenu();
-											
-											//numberOfPropertiesOwned++;
 										}
 									else if(menuInput == 2)
 										{
-									
-											System.out.println("Your loss...");
-											turnMenu();
-										}
-									else if(menuInput == 3)
-										{
 											System.out.println(MonopDriver2.board[playerLocation].getName() + " costs $" + MonopDriver2.board[playerLocation].getCost());
-											System.out.println("Would you like to buy this property?\n\n1) Yes\n2) No");
+											System.out.println("Would you like to buy this property?"
+													+ "\n\n\t1) Yes"
+													+ "\n\t2) No");
 											menuInput2 = userInput.nextInt();
 											
 												if(menuInput2 == 1)
 													{
-														checkForBankruptcy();
 														MonopDriver2.board[playerLocation].setOwner(playerName);
 														playerMoney -= MonopDriver2.board[playerLocation].getCost();
 														inventory.add(MonopDriver2.board[playerLocation].getName());
+														checkForBankruptcy();
 														turnMenu();
 													}
 												else
@@ -170,6 +164,12 @@ public class ZooMonopPlayer50
 														System.out.println("Your loss...");
 														turnMenu();
 													}
+										}
+									else if(menuInput == 3)
+										{
+									
+											System.out.println("Your loss...");
+											turnMenu();
 										}
 									else
 										{
@@ -181,7 +181,9 @@ public class ZooMonopPlayer50
 								//in if statment below... do && all colors are owned or something
 									else if(MonopDriver2.board[playerLocation].getOwner().equals(playerName))
 									{
-										System.out.println("You already own this property...\nWould you like to buy a house or hotel?\n1) Yes\n2) No");
+										System.out.println("You already own this property...\nWould you like to buy a house or hotel?"
+												+ "\n\t1) Yes"
+												+ "\n\t2) No");
 										menuInput = userInput.nextInt();
 										
 										if(menuInput == 1)
@@ -189,8 +191,9 @@ public class ZooMonopPlayer50
 												if(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() >= 4)
 													{
 														System.out.println("Sorry, you have already bought the maximum amount of property on this space. \n"
-																			+ "Would you like to buy a hotel?\n "
-																			+ "1) Yes\\n2) No");
+																			+ "Would you like to buy a hotel? "
+																			+ "\n\n\t1) Yes"
+																			+ "\n\t2) No");
 														
 														menuInput2 = userInput.nextInt();
 														
@@ -199,6 +202,7 @@ public class ZooMonopPlayer50
 																
 																((Properties2) MonopDriver2.board[playerLocation]).setNumberOfHotelsOwned(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHotelsOwned()+1);
 																playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getHouseHotelPrice();
+																checkForBankruptcy();
 																turnMenu();
 															}
 														else
@@ -211,6 +215,7 @@ public class ZooMonopPlayer50
 													
 													((Properties2) MonopDriver2.board[playerLocation]).setNumberOfHousesOwned(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned()+1);
 													playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getHouseHotelPrice();
+													checkForBankruptcy();
 													turnMenu();
 													
 													}
@@ -224,7 +229,7 @@ public class ZooMonopPlayer50
 								
 								else
 									{
-										System.out.println("This property is already owned by" + MonopDriver2.board[playerLocation].getOwner() + ", you now must pay rent.");
+										System.out.println("This property is already owned by" + MonopDriver2.board[playerLocation].getOwner() + ", now you must pay rent.");
 										if(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 0)
 											{
 												playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getBasicRent();
@@ -250,26 +255,63 @@ public class ZooMonopPlayer50
 									}
 	
 							}
-						
+//Railroads					
 						else if(MonopDriver2.board[playerLocation].getType().equals("Railroads"))
 							{
 								
 								if(MonopDriver2.board[playerLocation].getOwner().equals("none"))
 									{
-									System.out.println("This railroad is not owned, would you like to buy it?\n\n1) Yes\n2) No");
-									menuInput = userInput.nextInt();
-									
-									if(menuInput == 1)
-										{
-											
-											checkForBankruptcy();
-											MonopDriver2.board[playerLocation].setOwner(playerName);
-											playerMoney -= MonopDriver2.board[playerLocation].getCost();
-											inventory.add(MonopDriver2.board[playerLocation].getName());
-											turnMenu();
+										
+										System.out.println("This railroad is not owned, would you like to... "
+												+ "\n\n\t1) Buy this railroad"
+												+ "\n\t2) View railroad price"
+												+ "\n\t3) End turn");
+					
+										menuInput = userInput.nextInt();
+										
+										if(menuInput == 1)
+											{
+												MonopDriver2.board[playerLocation].setOwner(playerName);
+												playerMoney -= MonopDriver2.board[playerLocation].getCost();
+												inventory.add(MonopDriver2.board[playerLocation].getName());
+												checkForBankruptcy();
+												turnMenu();
+												
+												//numberOfPropertiesOwned++;
+											}
+										else if(menuInput == 2)
+											{
+												System.out.println(MonopDriver2.board[playerLocation].getName() + " costs $" + MonopDriver2.board[playerLocation].getCost());
+												System.out.println("Would you like to buy this railroad?"
+														+ "\n\n\t1) Yes"
+														+ "\n\t2) No");
+												menuInput2 = userInput.nextInt();
+												
+													if(menuInput2 == 1)
+														{
+															MonopDriver2.board[playerLocation].setOwner(playerName);
+															playerMoney -= MonopDriver2.board[playerLocation].getCost();
+															inventory.add(MonopDriver2.board[playerLocation].getName());
+															checkForBankruptcy();
+															turnMenu();
+														}
+													else
+														{
+															System.out.println("Your loss...");
+															turnMenu();
+														}
+											}
+										else if(menuInput == 3)
+											{
+										
+												System.out.println("Your loss...");
+												turnMenu();
+											}
+										else
+											{
+												turnMenu();
+											}
 										}
-									turnMenu();
-									}
 								else if(MonopDriver2.board[playerLocation].getOwner().equals(playerName))
 									{
 										System.out.println("You already own this railroad");
@@ -301,36 +343,77 @@ public class ZooMonopPlayer50
 										turnMenu();
 									}
 							}
-						
+//Utilities
 						else if(MonopDriver2.board[playerLocation].getType().equals("Utility"))
 							{
 								if(MonopDriver2.board[playerLocation].getOwner().equals("none"))
 									{
-									System.out.println("This utility is not owned, would you like to buy it?\n1) Yes\n2) No");
-									menuInput = userInput.nextInt();
-									
-									if(menuInput == 1)
-										{
-											checkForBankruptcy();
 										
-											MonopDriver2.board[playerLocation].setOwner(playerName);
-											playerMoney -= MonopDriver2.board[playerLocation].getCost();
-											inventory.add(MonopDriver2.board[playerLocation].getName());
+										System.out.println("This utility is not owned, would you like to... "
+												+ "\n\n\t1) Buy this utility"
+												+ "\n\t2) View utility price"
+												+ "\n\t3) End turn");
+					
+										menuInput = userInput.nextInt();
+										
+										if(menuInput == 1)
+											{
+												MonopDriver2.board[playerLocation].setOwner(playerName);
+												playerMoney -= MonopDriver2.board[playerLocation].getCost();
+												inventory.add(MonopDriver2.board[playerLocation].getName());
+												checkForBankruptcy();
+												turnMenu();
+												
+												//numberOfPropertiesOwned++;
+											}
+										else if(menuInput == 2)
+											{
+												System.out.println(MonopDriver2.board[playerLocation].getName() + " costs $" + MonopDriver2.board[playerLocation].getCost());
+												System.out.println("Would you like to buy this utility?"
+														+ "\n\n\t1) Yes"
+														+ "\n\t2) No");
+												menuInput2 = userInput.nextInt();
+												
+													if(menuInput2 == 1)
+														{
+															MonopDriver2.board[playerLocation].setOwner(playerName);
+															playerMoney -= MonopDriver2.board[playerLocation].getCost();
+															inventory.add(MonopDriver2.board[playerLocation].getName());
+															checkForBankruptcy();
+															turnMenu();
+														}
+													else
+														{
+															System.out.println("Your loss...");
+															turnMenu();
+														}
+											}
+										else if(menuInput == 3)
+											{
+										
+												System.out.println("Your loss...");
+												turnMenu();
+											}
+										else
+											{
+												turnMenu();
+											}
 										}
-									}
 								else if(MonopDriver2.board[playerLocation].getOwner().equals(playerName))
 									{
 										System.out.println("You already own this utility");
+										turnMenu();
 									}
 								else
 									{
-										System.out.println("This utility is already owned by " + MonopDriver2.board[playerLocation].getOwner() + ", you now must pay for the service.");
+										System.out.println("This utility is already owned by " + MonopDriver2.board[playerLocation].getOwner() + ", now you must pay for the service.");
 										
 										if (((Utilities2) MonopDriver2.board[playerLocation]).isOneOwnedUtility() == true)
 											{
 												
 												int dr1 = DiceRoller2.rollDice(2,6)*4;
 												playerMoney -= dr1;
+												checkForBankruptcy();
 												turnMenu();
 												
 											}
@@ -339,22 +422,22 @@ public class ZooMonopPlayer50
 												
 												int dr2 = DiceRoller2.rollDice(2,6)*10;
 												playerMoney -= dr2;
+												checkForBankruptcy();
 												turnMenu();
-												
 											}		
-						
-										//need to figure out how to search the array for everything that has one specific field
 									}
 							}
-
+//Other locations
 						else
 							{
+//Go
 								if(MonopDriver2.board[playerLocation].getName().equals("GO"))
 									{
 										playerMoney += MonopDriver2.board[playerLocation].getCost();
 										System.out.println("You collected $" + MonopDriver2.board[playerLocation].getCost());
 										
 									}
+//check if you landed on Go to Jail
 								else if(MonopDriver2.board[playerLocation].getName().equals("Go_To_Jail"))
 									{
 										goToJail();
@@ -368,7 +451,7 @@ public class ZooMonopPlayer50
 								
 								
 								
-								
+//Free Parking
 								else if(MonopDriver2.board[playerLocation].getName().equals("Free_Parking"))
 									{
 										System.out.println("You won $" + freeParkingMoney + "!");
@@ -394,17 +477,19 @@ public class ZooMonopPlayer50
 										System.out.println("You have been taxed $" + MonopDriver2.board[playerLocation].getCost());
 										freeParkingMoney += MonopDriver2.board[playerLocation].getCost();
 										playerMoney -= MonopDriver2.board[playerLocation].getCost();;
+										checkForBankruptcy();
 										turnMenu();
 									}
-								
-								//chance cards
+//Chance
 								else if(MonopDriver2.board[playerLocation].getName().equals("Chance"))
 									{
 										int chanceNumber = (int) (Math.random() * 3) + 1;
+										
 										if(chanceNumber == 1)
 											{
 										System.out.println("You're wife left you. Give 50% of your money to her.");
 										playerMoney = playerMoney / 2;
+										checkForBankruptcy();
 											}
 										
 										else if(chanceNumber == 2)
@@ -420,10 +505,11 @@ public class ZooMonopPlayer50
 											}
 										turnMenu();
 									}
-								//community chest
+//Community Chest
 								else if(MonopDriver2.board[playerLocation].getName().equals("Community_Chest"))
 									{
 										int chestNumber = (int) (Math.random() * 3) + 1;
+										
 										if(chestNumber == 1)
 											{
 										System.out.println("Your dog needs surgery. Pay the vet $100.");
@@ -434,28 +520,20 @@ public class ZooMonopPlayer50
 										else if(chestNumber == 2)
 											{
 												System.out.println("You have turned to a life of crime. You mugged a teenage girl for $5.");
+												System.out.println("SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME");
 												playerMoney = playerMoney + 5;
 											}
 										else
 											{
-												System.out.println("You bought the Fortnite battle pass ofr $10.");
+												System.out.println("You bought the Fortnite battle pass for $10.");
 												playerMoney = playerMoney - 10;
 												checkForBankruptcy();
 											}
 										turnMenu();
 									}
 							}
-					}
-		
-				
-				
-				
-				
-				
-				
-				
-				
-				
+					}	
+//Player Stats				
 				public static void displayPlayerStats()
 					{
 						System.out.println();
@@ -486,37 +564,8 @@ public class ZooMonopPlayer50
 						System.out.println();
 						System.out.println();
 						turnMenu();
-						
-//							for( int i = 0; i < inventory.size(); i++)
-//							{
-//								String ownedSpaces = board.
-//						
-//										inventory.add(MonopDriver2.board[playerLocation].getName);
-//							}
-						
-						
-						
-//						System.out.println("Number of properties owned: " + numberOfPropertiesOwned);
-//						System.out.println("Number of utilities owned: " + numberOfUtilitiesOwned);
-//						System.out.println("Number of railroads owned: " + numberOfRailroadsOwned);
 					}
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+//Check Bankruptcy
 				public static void checkForBankruptcy()
 					{
 						if(playerMoney <= 0)
@@ -525,20 +574,20 @@ public class ZooMonopPlayer50
 								stillPlaying = false;
 							}		
 					}
-				
+//Go to Jail
 				public static void goToJail()
 					{
 						playerLocation = 10;
-						System.out.println("You are now in jail");
+						//System.out.println("You are now in jail");
 						inJail = true;
-						turnMenu();
 					}
-				
+//Stuck in Jail	
 				public static void inJailTurn()
 					{
 						//need to implement cards soon
-						System.out.println("You are in jail\nWould you like to...\n1) Pay the $50 fee\n2) Roll for doubles"
-								+ "(If you roll doubles 3 consecutive times, you will pay $100)");
+						System.out.println("You are in jail, would you like to..."
+								+ "\n\n\t1) Pay the $50 fee"
+								+ "\n\t2) Roll for doubles (If you roll doubles 3 consecutive times, you will pay $100)");
 						menuInput = userInput.nextInt();
 						
 						if(menuInput == 1)
@@ -564,8 +613,7 @@ public class ZooMonopPlayer50
 									{
 										if(jailCounter == 3)
 											{
-												System.out.println("You have failed to roll a doubles after 3 attempts\n"
-														+ "you owe $100");
+												System.out.println("You have failed to roll a doubles after 3 attempts, you owe $100");
 												freeParkingMoney += 100;
 												playerMoney -= 100;
 												System.out.println("You have now payed the fee and are free to go.");

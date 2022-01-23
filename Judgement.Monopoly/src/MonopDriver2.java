@@ -105,32 +105,32 @@ public class MonopDriver2
 			      //THIS IS THE REAL ONE
 			      
 			      
-			      ZooMonopPlayer45.greetPlayer();
-			      while(ZooMonopPlayer45.stillPlaying == true)
-			    	  {
-			    		  if(ZooMonopPlayer45.inJail == false)
-			    			  {
-			    				  ZooMonopPlayer45.turnMenu();
-			    			  }
-			    		  else
-			    			  {
-			    				  ZooMonopPlayer45.inJailTurn();
-			    			  }
-			    	  }
-			      
-			      
-//			      ZooMonopPlayer50.greetPlayer();
-//			      while(ZooMonopPlayer50.stillPlaying == true)
+//			      ZooMonopPlayer45.greetPlayer();
+//			      while(ZooMonopPlayer45.stillPlaying == true)
 //			    	  {
-//			    		  if(ZooMonopPlayer50.inJail == false)
+//			    		  if(ZooMonopPlayer45.inJail == false)
 //			    			  {
-//			    				  ZooMonopPlayer50.turnMenu();
+//			    				  ZooMonopPlayer45.turnMenu();
 //			    			  }
 //			    		  else
 //			    			  {
-//			    				  ZooMonopPlayer50.inJailTurn();
+//			    				  ZooMonopPlayer45.inJailTurn();
 //			    			  }
 //			    	  }
+			      
+			      
+			      ZooMonopPlayer50.greetPlayer();
+			      while(ZooMonopPlayer50.stillPlaying == true)
+			    	  {
+			    		  if(ZooMonopPlayer50.inJail == false)
+			    			  {
+			    				  ZooMonopPlayer50.turnMenu();
+			    			  }
+			    		  else
+			    			  {
+			    				  ZooMonopPlayer50.inJailTurn();
+			    			  }
+			    	  }
 			      
 			}
 
