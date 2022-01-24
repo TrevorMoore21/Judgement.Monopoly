@@ -95,7 +95,7 @@ public class ZooMonopPlayer50
 						if(MonopDriver2.board[playerLocation].getName().equals("Jail"))
 							{
 								System.out.println("You landed on Jail, but you are just visiting.");
-								turnMenu();
+								
 							}
 						else
 							{
@@ -145,7 +145,7 @@ public class ZooMonopPlayer50
 											playerMoney -= MonopDriver2.board[playerLocation].getCost();
 											inventory.add(MonopDriver2.board[playerLocation].getName());
 											checkForBankruptcy();
-											turnMenu();
+											
 										}
 									else if(menuInput == 2)
 										{
@@ -161,23 +161,19 @@ public class ZooMonopPlayer50
 														playerMoney -= MonopDriver2.board[playerLocation].getCost();
 														inventory.add(MonopDriver2.board[playerLocation].getName());
 														checkForBankruptcy();
-														turnMenu();
+														
 													}
 												else
 													{
 														System.out.println("Your loss...");
-														turnMenu();
+														
 													}
 										}
 									else if(menuInput == 3)
 										{
 									
 											System.out.println("Your loss...");
-											turnMenu();
-										}
-									else
-										{
-											turnMenu();
+											
 										}
 									}
 								
@@ -207,11 +203,7 @@ public class ZooMonopPlayer50
 																((Properties2) MonopDriver2.board[playerLocation]).setNumberOfHotelsOwned(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHotelsOwned()+1);
 																playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getHouseHotelPrice();
 																checkForBankruptcy();
-																turnMenu();
-															}
-														else
-															{
-																turnMenu();
+																
 															}
 													}
 												else
@@ -220,14 +212,12 @@ public class ZooMonopPlayer50
 													((Properties2) MonopDriver2.board[playerLocation]).setNumberOfHousesOwned(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned()+1);
 													playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getHouseHotelPrice();
 													checkForBankruptcy();
-													turnMenu();
 													
 													}
 											}
 										else
 											{
 												System.out.println("Oops, that could bite you later :(");
-												turnMenu();
 											}
 									}
 								
@@ -279,9 +269,7 @@ public class ZooMonopPlayer50
 												playerMoney -= MonopDriver2.board[playerLocation].getCost();
 												inventory.add(MonopDriver2.board[playerLocation].getName());
 												checkForBankruptcy();
-												turnMenu();
 												
-												//numberOfPropertiesOwned++;
 											}
 										else if(menuInput == 2)
 											{
@@ -297,29 +285,24 @@ public class ZooMonopPlayer50
 															playerMoney -= MonopDriver2.board[playerLocation].getCost();
 															inventory.add(MonopDriver2.board[playerLocation].getName());
 															checkForBankruptcy();
-															turnMenu();
+														
 														}
 													else
 														{
 															System.out.println("Your loss...");
-															turnMenu();
+															
 														}
 											}
 										else if(menuInput == 3)
 											{
 										
 												System.out.println("Your loss...");
-												turnMenu();
-											}
-										else
-											{
-												turnMenu();
+												
 											}
 										}
 								else if(MonopDriver2.board[playerLocation].getOwner().equals(playerName))
 									{
 										System.out.println("You already own this railroad");
-										turnMenu();
 									}
 								else
 									{
@@ -344,7 +327,7 @@ public class ZooMonopPlayer50
 											}
 										
 										checkForBankruptcy();
-										turnMenu();
+										
 									}
 							}
 //Utilities
@@ -366,7 +349,7 @@ public class ZooMonopPlayer50
 												playerMoney -= MonopDriver2.board[playerLocation].getCost();
 												inventory.add(MonopDriver2.board[playerLocation].getName());
 												checkForBankruptcy();
-												turnMenu();
+												
 												
 												//numberOfPropertiesOwned++;
 											}
@@ -384,29 +367,25 @@ public class ZooMonopPlayer50
 															playerMoney -= MonopDriver2.board[playerLocation].getCost();
 															inventory.add(MonopDriver2.board[playerLocation].getName());
 															checkForBankruptcy();
-															turnMenu();
+															
 														}
 													else
 														{
 															System.out.println("Your loss...");
-															turnMenu();
+														
 														}
 											}
 										else if(menuInput == 3)
 											{
 										
 												System.out.println("Your loss...");
-												turnMenu();
-											}
-										else
-											{
-												turnMenu();
+											
 											}
 										}
 								else if(MonopDriver2.board[playerLocation].getOwner().equals(playerName))
 									{
 										System.out.println("You already own this utility");
-										turnMenu();
+										
 									}
 								else
 									{
@@ -417,17 +396,18 @@ public class ZooMonopPlayer50
 												
 												int dr1 = DiceRoller2.rollDice(2,6)*4;
 												playerMoney -= dr1;
+												System.out.println("You lost " + dr1);
 												checkForBankruptcy();
-												turnMenu();
-												
+
 											}
 										else if (((Utilities2) MonopDriver2.board[playerLocation]).isTwoOwnedUtilities() == true)
 											{
 												
 												int dr2 = DiceRoller2.rollDice(2,6)*10;
 												playerMoney -= dr2;
+												System.out.println("You lost " + dr2);
 												checkForBankruptcy();
-												turnMenu();
+											
 											}		
 									}
 							}
@@ -484,7 +464,7 @@ public class ZooMonopPlayer50
 										freeParkingMoney += MonopDriver2.board[playerLocation].getCost();
 										playerMoney -= MonopDriver2.board[playerLocation].getCost();;
 										checkForBankruptcy();
-										turnMenu();
+									
 									}
 //Chance
 								else if(MonopDriver2.board[playerLocation].getName().equals("Chance"))
@@ -509,7 +489,7 @@ public class ZooMonopPlayer50
 												System.out.println("You found $400 on the street.");
 												playerMoney = playerMoney + 400;
 											}
-										turnMenu();
+									
 									}
 //Community Chest
 								else if(MonopDriver2.board[playerLocation].getName().equals("Community_Chest"))
@@ -535,7 +515,7 @@ public class ZooMonopPlayer50
 												playerMoney = playerMoney - 10;
 												checkForBankruptcy();
 											}
-										turnMenu();
+									
 									}
 							}
 					}	

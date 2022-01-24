@@ -106,7 +106,7 @@ public class MonopDriver2
 			      
 			      //THIS IS THE REAL ONE
 			      
-			   /*   
+		  
 			      ZooMonopPlayer45.greetPlayer();
 			      while (ZooMonopPlayer45.stillPlaying == true)
 			    	  {
@@ -127,8 +127,8 @@ public class MonopDriver2
 			    			  }
 			    		
 			    	  }
-	*/
-			      
+	
+			  /*    
 			    ZooMonopPlayer50.greetPlayer();
 			      while(ZooMonopPlayer50.stillPlaying)
 			    	  {
@@ -147,7 +147,7 @@ public class MonopDriver2
 			    			  {
 			    				  ZooMonopPlayer50.inJailTurn();
 			    			  }
-			    	  }
+			    	  }*/
 			      
 			}
 

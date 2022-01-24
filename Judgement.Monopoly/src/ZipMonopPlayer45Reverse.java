@@ -11,15 +11,8 @@ public class ZipMonopPlayer45Reverse
 		{
 			ZooMonopPlayer45.playerLocation ++;
 			
-			if (MonopDriver2.board[ZooMonopPlayer45.playerLocation].getName().equals("Free_Parking"))
-				{
-					System.out.println("Now that you have landed back on Free Parking,"
-							+ " you are free to move clockwise");
-					ZooMonopPlayer45.reverseFreeParking = false;
-					ZooMonopPlayer45.turnMenu();
-				}
-			else
-				{
+//			else
+//				{
 					System.out.println("It's your turn " + ZooMonopPlayer45.playerName + "\nWould you like to..."
 							+ "\n\n\t1) Roll the dice"
 							+ "\n\t2) View your stats");
@@ -38,12 +31,13 @@ public class ZipMonopPlayer45Reverse
 							System.out.println("That's not an option. Please try again.");
 							reverseMenu();
 						}
-				}
+			//	}
 		}
 //Move in Reverse
 		public static void moveReverse()
 		{
-			//System.out.println(ZooMonopPlayer45.playerLocation);
+			
+			//int playerRoll = 20;
 			int playerRoll = DiceRoller2.rollDice(2,6);
 			int negativeRoll = playerRoll * ZooMonopPlayer45.reverseDat;
 			
@@ -53,7 +47,6 @@ public class ZipMonopPlayer45Reverse
 			if((ZooMonopPlayer45.playerLocation + negativeRoll) >= 0)
 				{
 					ZooMonopPlayer45.playerLocation += negativeRoll;
-					System.out.println(ZooMonopPlayer45.playerLocation);
 					System.out.println("You can now move " + playerRoll + " places backwards");
 				}
 			else
@@ -69,6 +62,16 @@ public class ZipMonopPlayer45Reverse
 				{
 					System.out.println("You landed on Jail, but you are just visiting.");
 					reverseMenu();
+				}
+			else if (MonopDriver2.board[ZooMonopPlayer45.playerLocation].getName().equals("Free_Parking"))
+				{
+					System.out.println("Now that you have landed back on Free Parking,"
+							+ " you are free to move clockwise");
+					System.out.println("You also won $" + ZooMonopPlayer45.freeParkingMoney + "!");
+					ZooMonopPlayer45.playerMoney += ZooMonopPlayer45.freeParkingMoney;
+					ZooMonopPlayer45.freeParkingMoney = 0;
+					ZooMonopPlayer45.reverseFreeParking = false;
+					
 				}
 			else
 				{
@@ -97,48 +100,8 @@ public class ZipMonopPlayer45Reverse
 								ZooMonopPlayer45.timesRolledDoubles = 0;
 							}
 			
-			moveReverse();
+			//moveReverse();
 			
-			
-			
-			
-			
-			
-			
-			
-		/*//regulating playerLocation
-			if(ZooMonopPlayer45.playerLocation >= 0)
-				{
-					
-					ZooMonopPlayer45.playerLocation = ZooMonopPlayer45.playerLocation * ZooMonopPlayer45.reverseDat;
-		
-					if (ZooMonopPlayer45.playerLocation < 0)
-						{
-							
-							ZooMonopPlayer45.playerLocation = (ZooMonopPlayer45.playerLocation + playerRoll) * ZooMonopPlayer45.reverseDat;
-							System.out.println("You can now move " + playerRoll + " places backwards");
-							
-						}
-					else
-						{
-							ZooMonopPlayer45.playerLocation = ((ZooMonopPlayer45.playerLocation + playerRoll) - 40) * ZooMonopPlayer45.reverseDat;
-							ZooMonopPlayer45.playerMoney += 200;
-							System.out.println("You can now move " + playerRoll + " places backwards");
-							System.out.println("You passed GO and collected $200");
-							reverseMenu();
-						}
-				}
-		//nuance if land on Jail but just visiting
-			if(MonopDriver2.board[ZooMonopPlayer45.playerLocation].getName().equals("Jail"))
-				{
-					System.out.println("You landed on Jail, but you are just visiting.");
-					reverseMenu();
-				}
-			else
-				{
-					System.out.println("You landed on " + MonopDriver2.board[ZooMonopPlayer45.playerLocation].getName());
-				}
-			*/
 			
 		}
 		
