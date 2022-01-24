@@ -4,16 +4,19 @@ import java.util.Scanner;
 
 public class ZooMonopPlayer50
 	{
+
 		static String playerName;
 		static int playerLocation = 0;
-		static int playerMoney = 10;
+		static int playerMoney = 1500;
 		static int timesRolledDoubles = 0;
+		static int reverseDat = -1;
 		static int menuInput;
 		static int menuInput2;
 		static int freeParkingMoney;
 		static int jailCounter;
 		static int inventoryCounter;
 		static boolean inJail = false;
+		static boolean reverseFreeParking = false;
 		static boolean stillPlaying = true;
 		static Scanner userInput = new Scanner(System.in);
 		static ArrayList<String> inventory = new ArrayList<String>();
@@ -71,8 +74,8 @@ public class ZooMonopPlayer50
 //Move Player	
 				public static void movePlayer()
 					{
-						//int playerRoll = 10;
-						int playerRoll = DiceRoller2.rollDice(2,6);
+						int playerRoll = 4;
+						//int playerRoll = DiceRoller2.rollDice(2,6);
 						
 			//regulating playerLocation
 						if((playerLocation + playerRoll) <= 39)
@@ -85,7 +88,7 @@ public class ZooMonopPlayer50
 								playerLocation = (playerLocation + playerRoll) - 40;
 								playerMoney += 200;
 								System.out.println("You can now move " + playerRoll + " places");
-								System.out.println("You passsed GO and collected $200");
+								System.out.println("You passed GO and collected $200");
 							}
 			//nuance if land on Jail but just visiting
 						if(MonopDriver2.board[playerLocation].getName().equals("Jail"))
@@ -457,7 +460,8 @@ public class ZooMonopPlayer50
 										System.out.println("You won $" + freeParkingMoney + "!");
 										playerMoney += freeParkingMoney;
 										freeParkingMoney = 0;
-										turnMenu();
+										reverseFreeParking = true;
+										//moveReverse();
 									}
 								
 								
@@ -565,6 +569,69 @@ public class ZooMonopPlayer50
 						System.out.println();
 						turnMenu();
 					}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+//Move in Reverse
+//				public static void moveReverse()
+//				{
+//					playerLocation ++;
+//					
+//					if (MonopDriver2.board[playerLocation].getName().equals("Free_Parking"))
+//						{
+//							System.out.println("Now that you have landed back on Free Parking,"
+//									+ " you are free to move clockwise");
+//							reverseFreeParking = false;
+//							turnMenu();
+//						}
+//					else
+//						{
+//							System.out.println("It's your turn " + playerName + "\nWould you like to..."
+//									+ "\n\n\t1) Roll the dice"
+//									+ "\n\t2) View your stats");
+//							menuInput = userInput.nextInt();
+//							
+//							if(menuInput == 1)
+//								{
+//									movePlayer();
+//								}
+//							else if(menuInput == 2)
+//								{
+//									displayPlayerStats();
+//								}
+//							else
+//								{
+//									System.out.println("That's not an option. Please try again.");
+//									moveReverse();
+//								}
+//						}
+//				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 //Check Bankruptcy
 				public static void checkForBankruptcy()
 					{
@@ -572,6 +639,7 @@ public class ZooMonopPlayer50
 							{
 								System.out.println("You've gone bankrupt!");
 								stillPlaying = false;
+								System.exit(0);
 							}		
 					}
 //Go to Jail

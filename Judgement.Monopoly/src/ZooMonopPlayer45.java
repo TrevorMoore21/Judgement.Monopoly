@@ -88,7 +88,7 @@ public class ZooMonopPlayer45
 								playerLocation = (playerLocation + playerRoll) - 40;
 								playerMoney += 200;
 								System.out.println("You can now move " + playerRoll + " places");
-								System.out.println("You passsed GO and collected $200");
+								System.out.println("You passed GO and collected $200");
 							}
 			//nuance if land on Jail but just visiting
 						if(MonopDriver2.board[playerLocation].getName().equals("Jail"))
@@ -627,6 +627,11 @@ public class ZooMonopPlayer45
 				
 				
 				
+				
+				
+				
+				
+				
 //Check Bankruptcy
 				public static void checkForBankruptcy()
 					{
@@ -634,6 +639,7 @@ public class ZooMonopPlayer45
 							{
 								System.out.println("You've gone bankrupt!");
 								stillPlaying = false;
+								System.exit(0);
 							}		
 					}
 //Go to Jail
