@@ -74,8 +74,8 @@ public class ZooMonopPlayer45
 //Move Player	
 				public static void movePlayer()
 					{
-						//int playerRoll = 10;
-						int playerRoll = DiceRoller2.rollDice(2,6);
+						int playerRoll = 10;
+						//int playerRoll = DiceRoller2.rollDice(2,6);
 						
 			//regulating playerLocation
 						if((playerLocation + playerRoll) <= 39)
@@ -550,6 +550,7 @@ public class ZooMonopPlayer45
 								
 								if(inventoryCounter == 0)
 									{
+										System.out.println("You do not own any properties");
 										inventoryCounter = 0;
 										turnMenu();
 									}

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class ZipMonopPlayer45Reverse
 	{
 
@@ -42,19 +43,24 @@ public class ZipMonopPlayer45Reverse
 //Move in Reverse
 		public static void moveReverse()
 		{
-			int playerRoll = (DiceRoller2.rollDice(2,6)) * ZooMonopPlayer45.reverseDat;
+			//System.out.println(ZooMonopPlayer45.playerLocation);
+			int playerRoll = DiceRoller2.rollDice(2,6);
+			int negativeRoll = playerRoll * ZooMonopPlayer45.reverseDat;
+			
+			
 			
 		//regulating playerLocation
-			if((ZooMonopPlayer45.playerLocation + playerRoll) >= 0)
+			if((ZooMonopPlayer45.playerLocation + negativeRoll) >= 0)
 				{
-					ZooMonopPlayer45.playerLocation += playerRoll;
-					System.out.println("You can now move " + ((playerRoll) *  ZooMonopPlayer45.reverseDat) + " places");
+					ZooMonopPlayer45.playerLocation += negativeRoll;
+					System.out.println(ZooMonopPlayer45.playerLocation);
+					System.out.println("You can now move " + playerRoll + " places backwards");
 				}
 			else
 				{
-					ZooMonopPlayer45.playerLocation = (ZooMonopPlayer45.playerLocation + playerRoll) + 40;
+					ZooMonopPlayer45.playerLocation = (ZooMonopPlayer45.playerLocation + negativeRoll) + 40;
 					ZooMonopPlayer45.playerMoney += 200;
-					System.out.println("You can now move " + playerRoll + " places");
+					System.out.println("You can now move " + playerRoll + " places backwards");
 					System.out.println("You passed GO and collected $200");
 				}
 			

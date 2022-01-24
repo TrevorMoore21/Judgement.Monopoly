@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
+
 public class ZooMonopPlayer50
 	{
 
@@ -460,6 +461,7 @@ public class ZooMonopPlayer50
 										System.out.println("You won $" + freeParkingMoney + "!");
 										playerMoney += freeParkingMoney;
 										freeParkingMoney = 0;
+										System.out.println(playerLocation);
 										reverseFreeParking = true;
 										//moveReverse();
 									}
@@ -550,15 +552,16 @@ public class ZooMonopPlayer50
 								
 								if(inventoryCounter == 0)
 									{
+										System.out.println("You do not own any properties");
 										inventoryCounter = 0;
-										turnMenu();
+										
 									}
 								else if (inventoryCounter == 1)
 									{
 										System.out.print("You own: ");
 										System.out.print(ownedSpaces);
 									}
-								else 
+								else if (inventoryCounter >= 2)
 									{
 										System.out.print(", ");
 										System.out.print(ownedSpaces);
@@ -567,7 +570,6 @@ public class ZooMonopPlayer50
 						inventoryCounter = 0;
 						System.out.println();
 						System.out.println();
-						turnMenu();
 					}
 				
 				
@@ -664,9 +666,9 @@ public class ZooMonopPlayer50
 								playerMoney -= 50;
 								System.out.println("You have now payed the fee of $50 and are free to go.");
 								inJail = false;
-								turnMenu();
+								
 							}
-						else
+						else if(menuInput == 2)
 							{
 								DiceRoller2.rollDice(2,6);
 								jailCounter++;
@@ -686,7 +688,7 @@ public class ZooMonopPlayer50
 												playerMoney -= 100;
 												System.out.println("You have now payed the fee and are free to go.");
 												inJail = false;
-												turnMenu();
+												
 												
 											}
 										else
