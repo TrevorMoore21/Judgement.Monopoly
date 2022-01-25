@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>AdventureTimeMonopoly.rtf</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Library/Mobile%20Documents/com~apple~TextEdit/Documents/AdventureTimeMonopoly.rtf</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

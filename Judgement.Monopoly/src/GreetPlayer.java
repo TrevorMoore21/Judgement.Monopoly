@@ -31,7 +31,9 @@ public class GreetPlayer
 				{
 						
 						System.out.println("What Monopoly version would you like to play?"
-								+ "\n\t1) American Monopoly");
+								+ "\n\t1) American Monopoly"
+								+ "\n\t2) SpongeBob Monoply"
+								+ "\n\t3) Aventure Time Monopoly");
 						
 						monopVersionNum = monopVersionInput.nextInt();
 				}		
