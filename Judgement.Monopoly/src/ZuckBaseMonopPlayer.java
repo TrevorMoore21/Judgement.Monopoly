@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class ZooSamsMonopPlayer
+public class ZuckBaseMonopPlayer
 	{
 
 

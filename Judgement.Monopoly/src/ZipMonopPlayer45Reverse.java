@@ -4,15 +4,12 @@ import java.util.Scanner;
 
 public class ZipMonopPlayer45Reverse
 	{
-
 		
 //Reverse Menu
 		public static void reverseMenu()
 		{
 			ZooMonopPlayer45.playerLocation ++;
 			
-//			else
-//				{
 					System.out.println("It's your turn " + ZooMonopPlayer45.playerName + "\nWould you like to..."
 							+ "\n\n\t1) Roll the dice"
 							+ "\n\t2) View your stats");
@@ -31,7 +28,6 @@ public class ZipMonopPlayer45Reverse
 							System.out.println("That's not an option. Please try again.");
 							reverseMenu();
 						}
-			//	}
 		}
 //Move in Reverse
 		public static void moveReverse()
@@ -99,10 +95,6 @@ public class ZipMonopPlayer45Reverse
 							{
 								ZooMonopPlayer45.timesRolledDoubles = 0;
 							}
-			
-			//moveReverse();
-			
-			
 		}
 		
 	}

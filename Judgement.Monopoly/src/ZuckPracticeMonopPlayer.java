@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 
-public class ZooMonopPlayer50
+public class ZuckPracticeMonopPlayer
 	{
 
 		static String playerName;
