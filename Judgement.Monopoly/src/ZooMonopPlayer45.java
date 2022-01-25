@@ -14,7 +14,6 @@ public class ZooMonopPlayer45
 		static int freeParkingMoney;
 		static int jailCounter;
 		static int inventoryCounter;
-		static int playerCount;
 		static boolean inJail = false;
 		static boolean reverseFreeParking = false;
 		static boolean stillPlaying = true;
@@ -23,38 +22,10 @@ public class ZooMonopPlayer45
 		static ArrayList<String> inventory = new ArrayList<String>();
 		
 		
-//Greet Player
-		public static void greetPlayer45()
+//Ask Player 1's Name
+		public static void askPlayer1Name()
 			{
-				int introNumber = (int) (Math.random() * 3) + 1;
-				if(introNumber == 1)
-					{
-						System.out.println("Hi, welcome to Monopoly");
-					}
-				else if(introNumber == 2)
-					{
-						System.out.println("Wassup Fart-Catcher, welcome to dIgItAl_MoNoPlY");
-					}
-				else
-					{
-						System.out.println("Welcome to Monopoly fool");
-					}
-				
-				
-				System.out.println("How many wish to play?"
-						+ "\n\t1) 1"
-						+ "\n\t2) 2");
-				playerCount = playerNumber.nextInt();
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				System.out.println("What is your name?");
+				System.out.println("What is your name, player 1?");
 				playerName = userInput.nextLine();
 				System.out.println();
 				System.out.println("Welcome, " + playerName + "!");
@@ -89,8 +60,8 @@ public class ZooMonopPlayer45
 //Move Player	
 				public static void movePlayer()
 					{
-						int playerRoll = 4;
-						//int playerRoll = DiceRoller2.rollDice(2,6);
+						//int playerRoll = 4;
+						int playerRoll = DiceRoller2.rollDice(2,6);
 						
 			//regulating playerLocation
 						if((playerLocation + playerRoll) <= 39)

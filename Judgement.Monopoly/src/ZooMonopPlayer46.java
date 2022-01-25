@@ -22,24 +22,10 @@ public class ZooMonopPlayer46
 		static ArrayList<String> inventory2 = new ArrayList<String>();
 		
 		
-//Greet Player
-		public static void greetPlayer46()
+//Ask Player 1's Name
+		public static void askPlayer2Name()
 			{
-				int introNumber = (int) (Math.random() * 3) + 1;
-				if(introNumber == 1)
-					{
-						System.out.println("Hi, welcome to Monopoly");
-					}
-				else if(introNumber == 2)
-					{
-						System.out.println("Wassup Fart-Catcher, welcome to dIgItAl_MoNoPlY");
-					}
-				else
-					{
-						System.out.println("Welcome to Monopoly fool");
-					}
-				
-				System.out.println("What is your name?");
+				System.out.println("What is your name, player 2?");
 				playerName2 = userInput2.nextLine();
 				System.out.println();
 				System.out.println("Welcome, " + playerName2 + "!");
@@ -74,8 +60,8 @@ public class ZooMonopPlayer46
 //Move Player	
 				public static void movePlayer()
 					{
-						int playerRoll = 4;
-						//int playerRoll = DiceRoller2.rollDice(2,6);
+						//int playerRoll = 4;
+						int playerRoll = DiceRoller2.rollDice(2,6);
 						
 			//regulating playerLocation
 						if((playerLocation2 + playerRoll) <= 39)

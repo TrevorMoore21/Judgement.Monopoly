@@ -6,11 +6,42 @@ import java.io.IOException;
 
 public class MonopDriver2
 	{
-
+		
 		static BoardSpace2[] board = new BoardSpace2[40];
 		
 		public static void main(String[] args)  throws FileNotFoundException
 			{
+				
+				GreetPlayer.monopIntro();
+				GreetPlayer.chooseMonopVersion();
+				if(GreetPlayer.monopVersionNum == 1)
+					{
+						ReadAmericanMonopoly.readAmericanMonop();
+						GreetPlayer.chooseMonopPlayerCount();
+						
+						if(GreetPlayer.playerCount == 1)
+							{
+								RunBasicMonopoly1P.runBasicMonop1P();
+							}
+						else if(GreetPlayer.playerCount == 2)
+							{
+								RunBasicMonopoly2P.runBasicMonop2P();
+							}
+						else
+							{
+								System.out.println("Try again");
+								GreetPlayer.chooseMonopPlayerCount();
+							}
+						
+					}
+				else
+					{
+						System.out.println("Try again");
+						GreetPlayer.chooseMonopVersion();
+					}
+				
+				
+				/*
 				
 				Scanner file = new Scanner(new File("AmericanMonopoly.txt" ));
 				int numberOfLines = file.nextInt();
@@ -92,8 +123,12 @@ public class MonopDriver2
 			      
 			      
 			      
-		      
-			      ZooMonopPlayer45.greetPlayer();
+			      
+			      
+			      
+//ask Players' Names
+			      ZooMonopPlayer45.askPlayer1Name();
+			      ZooMonopPlayer46.askPlayer2Name();
 //Runs both Player Classes	
 			      while (ZooMonopPlayer45.stillPlaying == true && ZooMonopPlayer46.stillPlaying2 == true)
 			    	  {
@@ -131,6 +166,15 @@ public class MonopDriver2
 			    			  }
 			    		
 			    	  }
+			    	  */
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 	}
