@@ -111,7 +111,7 @@ public class MonopDriver2
 		if(GreetPlayer.monopVersionNum == 2)
 			{
 				
-				Scanner file = new Scanner(new File("SpongeBobMonop.txt" ));
+				Scanner file = new Scanner(new File("SpongeBobMonopoly.txt" ));
 				int numberOfLines = file.nextInt();
 			     
 			      for( int i = 0; i < numberOfLines; i++ )
@@ -202,7 +202,7 @@ public class MonopDriver2
 		if(GreetPlayer.monopVersionNum == 3)
 			{
 //Read AdventureTimeMonopoly
-				
+				 
 				Scanner file = new Scanner(new File("AdventureTimeMonopoly.txt" ));
 				int numberOfLines = file.nextInt();
 			     
