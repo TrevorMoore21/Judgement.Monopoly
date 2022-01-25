@@ -14,6 +14,7 @@ public class ZooMonopPlayer45
 		static int freeParkingMoney;
 		static int jailCounter;
 		static int inventoryCounter;
+		static int turnCounter1;
 		static boolean inJail = false;
 		static boolean reverseFreeParking = false;
 		static boolean stillPlaying = true;
@@ -39,6 +40,7 @@ public class ZooMonopPlayer45
 						+ "\n\n\t1) Roll the dice"
 						+ "\n\t2) View your stats");
 				menuInput = userInput.nextInt();
+
 				
 				if(menuInput == 1)
 					{
@@ -46,6 +48,7 @@ public class ZooMonopPlayer45
 					}
 				else if(menuInput == 2)
 					{
+						turnCounter1++;
 						displayPlayerStats();
 					}
 				else
@@ -514,6 +517,12 @@ public class ZooMonopPlayer45
 						inventoryCounter = 0;
 						System.out.println();
 						System.out.println();
+						
+						if(turnCounter1 == 1)
+							{
+								turnCounter1 = 0;
+								turnMenu();
+							}
 					}
 //Check Bankruptcy
 				public static void checkForBankruptcy()

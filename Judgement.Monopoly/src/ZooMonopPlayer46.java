@@ -15,6 +15,7 @@ public class ZooMonopPlayer46
 		static int freeParkingMoney;
 		static int jailCounter;
 		static int inventoryCounter;
+		static int turnCounter2;
 		static boolean inJail = false;
 		static boolean reverseFreeParking = false;
 		static boolean stillPlaying2 = true;
@@ -46,6 +47,7 @@ public class ZooMonopPlayer46
 					}
 				else if(menuInput == 2)
 					{
+						turnCounter2++;
 						displayPlayerStats();
 					}
 				else
@@ -514,6 +516,12 @@ public class ZooMonopPlayer46
 						inventoryCounter = 0;
 						System.out.println();
 						System.out.println();
+						
+						if(turnCounter2 == 1)
+							{
+								turnCounter2 = 0;
+								turnMenu();
+							}
 					}
 //Check Bankruptcy
 				public static void checkForBankruptcy()
