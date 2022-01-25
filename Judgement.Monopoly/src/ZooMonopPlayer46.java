@@ -23,7 +23,7 @@ public class ZooMonopPlayer46
 		
 		
 //Greet Player
-		public static void greetPlayer()
+		public static void greetPlayer46()
 			{
 				int introNumber = (int) (Math.random() * 3) + 1;
 				if(introNumber == 1)

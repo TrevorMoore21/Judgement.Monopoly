@@ -14,15 +14,17 @@ public class ZooMonopPlayer45
 		static int freeParkingMoney;
 		static int jailCounter;
 		static int inventoryCounter;
+		static int playerCount;
 		static boolean inJail = false;
 		static boolean reverseFreeParking = false;
 		static boolean stillPlaying = true;
 		static Scanner userInput = new Scanner(System.in);
+		static Scanner playerNumber = new Scanner(System.in); 
 		static ArrayList<String> inventory = new ArrayList<String>();
 		
 		
 //Greet Player
-		public static void greetPlayer()
+		public static void greetPlayer45()
 			{
 				int introNumber = (int) (Math.random() * 3) + 1;
 				if(introNumber == 1)
@@ -37,6 +39,20 @@ public class ZooMonopPlayer45
 					{
 						System.out.println("Welcome to Monopoly fool");
 					}
+				
+				
+				System.out.println("How many wish to play?"
+						+ "\n\t1) 1"
+						+ "\n\t2) 2");
+				playerCount = playerNumber.nextInt();
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				System.out.println("What is your name?");
 				playerName = userInput.nextLine();

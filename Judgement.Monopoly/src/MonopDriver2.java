@@ -88,28 +88,16 @@ public class MonopDriver2
 			        		  }
 			          }
 			      
-//			      MonopPlayer2.greetPlayer();
-//			      while(MonopPlayer2.stillPlaying == true)
-//			    	  {
-//			    		  if(MonopPlayer2.inJail == false)
-//			    			  {
-//			    				  MonopPlayer2.turnMenu();
-//			    			  }
-//			    		  else
-//			    			  {
-//			    				  MonopPlayer2.inJailTurn();
-//			    			  }
-//			    	  }
 
 			      
 			      
 			      
-			      //THIS IS THE REAL ONE
-			      
-		  
+		      
 			      ZooMonopPlayer45.greetPlayer();
-			      while (ZooMonopPlayer45.stillPlaying == true)
+//Runs both Player Classes	
+			      while (ZooMonopPlayer45.stillPlaying == true && ZooMonopPlayer46.stillPlaying2 == true)
 			    	  {
+//Player 1
 			    		  if (ZooMonopPlayer45.inJail == false)
 			    			  {
 			    				  if (ZooMonopPlayer45.reverseFreeParking == false)
@@ -125,30 +113,24 @@ public class MonopDriver2
 			    			  {
 			    				  ZooMonopPlayer45.inJailTurn();
 			    			  }
-			    		
-			    	  }
-	
-			  /*    
-			    ZooMonopPlayer50.greetPlayer();
-			      while(ZooMonopPlayer50.stillPlaying)
-			    	  {
-			    		  if(ZooMonopPlayer50.inJail == false)
+//Player 2			    	
+			    		  if (ZooMonopPlayer46.inJail == false)
 			    			  {
-			    				  if (ZooMonopPlayer50.reverseFreeParking == false)
+			    				  if (ZooMonopPlayer46.reverseFreeParking == false)
 					    			  {
-					    				  ZooMonopPlayer50.turnMenu();
+					    				  ZooMonopPlayer46.turnMenu();
 					    			  }
-			    				  else
+					    		  else
 					    			  {
-					    				  ZipMonopPlayer45Reverse.reverseMenu();
+					    				  ZipMonopPlayer46Reverse.reverseMenu();
 					    			  }
 			    			  }
 			    		  else
 			    			  {
-			    				  ZooMonopPlayer50.inJailTurn();
+			    				  ZooMonopPlayer46.inJailTurn();
 			    			  }
-			    	  }*/
-			      
+			    		
+			    	  }
 			}
 
 	}
