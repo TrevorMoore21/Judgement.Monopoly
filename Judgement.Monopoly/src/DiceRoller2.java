@@ -34,6 +34,10 @@ static boolean doubles = false;
 					doubles = true;
 					System.out.println("Well look at that, you rolled doubles!");
 				 }
+			 else
+				 {
+					 doubles = false;
+				 }
 			 return sumOfDice;
 			
 		    }

@@ -437,20 +437,21 @@ public class ZooMonopPlayer45
 									{
 										int chestNumber = (int) (Math.random() * 3) + 1;
 										
-										if(chestNumber == 1)
-											{
-										System.out.println("Your dog needs surgery. Pay the vet $100.");
-										playerMoney -= 100;
-										checkForBankruptcy();
-											}
+						
+												if(chestNumber == 1)
+													{
+														System.out.println("Your dog needs surgery. Pay the vet $100.");
+														playerMoney -= 100;
+														checkForBankruptcy();
+													}
 										
-										else if(chestNumber == 2)
-											{
-												System.out.println("You have turned to a life of crime. You mugged a teenage girl for $5.");
-												System.out.println("SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME");
-												playerMoney = playerMoney + 5;
-											}
-										else
+												else if(chestNumber == 2)
+													{
+														System.out.println("You have turned to a life of crime. You mugged a teenage girl for $5.");
+														System.out.println("SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME");
+														playerMoney = playerMoney + 5;
+													}
+												else
 											{
 												System.out.println("You bought the Fortnite battle pass for $10.");
 												playerMoney = playerMoney - 10;
@@ -654,6 +655,8 @@ public class ZooMonopPlayer45
 						if(playerMoney <= 0)
 							{
 								System.out.println("You've gone bankrupt!");
+								System.out.println("You lose " + playerName);
+								System.out.println(ZooMonopPlayer46.playerName2 + " wins");
 								stillPlaying = false;
 								System.exit(0);
 							}		

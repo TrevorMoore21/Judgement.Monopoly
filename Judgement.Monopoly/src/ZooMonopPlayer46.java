@@ -642,6 +642,8 @@ public class ZooMonopPlayer46
 						if(playerMoney2 <= 0)
 							{
 								System.out.println("You've gone bankrupt!");
+								System.out.println("You lose " + playerName2);
+								System.out.println(ZooMonopPlayer45.playerName + " wins");
 								stillPlaying2 = false;
 								System.exit(0);
 							}		
