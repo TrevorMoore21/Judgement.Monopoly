@@ -423,41 +423,15 @@ public class ZooMonopPlayer46
 										reverseFreeParking = true;
 										//moveReverse();
 									}
-//Taxes	
+								//American-->Taxes	
 								else if(MonopDriver2.board[playerLocation2].getName().equals("Income_Tax") || MonopDriver2.board[playerLocation2].getName().equals("Luxury_Tax"))
 									{
 										System.out.println("You have been taxed $" + MonopDriver2.board[playerLocation2].getCost());
 										freeParkingMoney += MonopDriver2.board[playerLocation2].getCost();
 										playerMoney2 -= MonopDriver2.board[playerLocation2].getCost();;
 										checkForBankruptcy();
-									
 									}
-//Chance
-								else if(MonopDriver2.board[playerLocation2].getName().equals("Chance"))
-									{
-										int chanceNumber = (int) (Math.random() * 3) + 1;
-										
-										if(chanceNumber == 1)
-											{
-										System.out.println("You're wife left you. Give 50% of your money to her.");
-										playerMoney2 = playerMoney2 / 2;
-										checkForBankruptcy();
-											}
-										
-										else if(chanceNumber == 2)
-											{
-												System.out.println("You got your secretary pregnant. Pay $300.");
-												playerMoney2 = playerMoney2 - 300;
-												checkForBankruptcy();
-											}
-										else
-											{
-												System.out.println("You found $400 on the street.");
-												playerMoney2 = playerMoney2 + 400;
-											}
-									
-									}
-//Community Chest
+//American-->Community Chest
 								else if(MonopDriver2.board[playerLocation2].getName().equals("Community_Chest"))
 									{
 										int chestNumber = (int) (Math.random() * 3) + 1;
@@ -481,8 +455,147 @@ public class ZooMonopPlayer46
 												playerMoney2 = playerMoney2 - 10;
 												checkForBankruptcy();
 											}
-									
 									}
+//American-->Chance
+								else if(MonopDriver2.board[playerLocation2].getName().equals("Chance"))
+									{
+										int chanceNumber = (int) (Math.random() * 3) + 1;
+										
+										if(chanceNumber == 1)
+											{
+										System.out.println("You're wife left you. Give 50% of your money to her.");
+										playerMoney2 = playerMoney2 / 2;
+										checkForBankruptcy();
+											}
+										
+										else if(chanceNumber == 2)
+											{
+												System.out.println("You got your secretary pregnant. Pay $300.");
+												playerMoney2 = playerMoney2 - 300;
+												checkForBankruptcy();
+											}
+										else
+											{
+												System.out.println("You found $400 on the street.");
+												playerMoney2 = playerMoney2 + 400;
+											}
+									}
+//SpongeBob-->Taxes	
+								else if(MonopDriver2.board[playerLocation2].getName().equals("BUBBLE_TAX") || MonopDriver2.board[playerLocation2].getName().equals("EMPLOYEE_OF_THE_MONTH_TAX"))
+									{
+										System.out.println("You have been taxed $" + MonopDriver2.board[playerLocation2].getCost());
+										freeParkingMoney += MonopDriver2.board[playerLocation2].getCost();
+										playerMoney2 -= MonopDriver2.board[playerLocation2].getCost();;
+										checkForBankruptcy();
+									}
+//SpongeBob-->TREASURE CHEST				
+								else if(MonopDriver2.board[playerLocation2].getName().equals("TREASURE_CHEST"))
+									{
+										int treasureChest = (int) (Math.random() * 3) + 1;
+										
+										if(treasureChest == 1)
+											{
+										System.out.println("Your snail needs surgery. Pay the vet $100.");
+										playerMoney2 -= 100;
+										checkForBankruptcy();
+											}
+										
+										else if(treasureChest == 2)
+											{
+												System.out.println("You have turned to a life of crime. You mugged a teenage gold fish for $5.");
+												System.out.println("SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME");
+												playerMoney2 = playerMoney2 + 5;
+											}
+										else
+											{
+												System.out.println("You bought the Fortwave battle pass for $10.");
+												playerMoney2 = playerMoney2 - 10;
+												checkForBankruptcy();
+											}
+									}
+//SpongeBob-->LIFE PRESERVER
+								else if(MonopDriver2.board[playerLocation2].getName().equals("LIFE_PRESERVER"))
+									{
+										int lifePreserver = (int) (Math.random() * 3) + 1;
+										
+										if(lifePreserver == 1)
+											{
+										System.out.println("Squidward sues you. Give 50% of your money to him.");
+										playerMoney2 = playerMoney2 / 2;
+										checkForBankruptcy();
+											}
+										
+										else if(lifePreserver == 2)
+											{
+												System.out.println("Patrick punched you. Doctor's fee: pay $100.");
+												playerMoney2 = playerMoney2 - 100;
+												checkForBankruptcy();
+											}
+										else
+											{
+												System.out.println("You found $150 on a jellyfish.");
+												playerMoney2 = playerMoney2 + 150;
+											}
+									}
+//Adventure Time-->Taxes	
+								else if(MonopDriver2.board[playerLocation2].getName().equals("Jerk_Tax") || MonopDriver2.board[playerLocation2].getName().equals("Jacked_Up!"))
+									{
+										System.out.println("You have been taxed $" + MonopDriver2.board[playerLocation2].getCost());
+										freeParkingMoney += MonopDriver2.board[playerLocation2].getCost();
+										playerMoney2 -= MonopDriver2.board[playerLocation2].getCost();;
+										checkForBankruptcy();
+									}
+//Adventure Time-->What The Lump?			
+								else if(MonopDriver2.board[playerLocation2].getName().equals("What_The_Lump?"))
+									{
+										int wtl = (int) (Math.random() * 3) + 1;
+										
+										if(wtl == 1)
+											{
+										System.out.println("BMO needs surgery. Pay the vet $200.");
+										playerMoney2 -= 200;
+										checkForBankruptcy();
+											}
+										
+										else if(wtl == 2)
+											{
+												System.out.println("You have turned to a life of crime and joined the Ice King."
+														+ " You mugged Princess Bubblegum for $7.");
+												System.out.println("SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME SHAME");
+												playerMoney2 = playerMoney2 + 7;
+											}
+										else
+											{
+												System.out.println("Lumpy Space Princess needs plastic surgery: donate $100.");
+												playerMoney2 = playerMoney2 - 100;
+												checkForBankruptcy();
+											}
+									}		
+//Adventure Time-->Algebraic!
+								else if(MonopDriver2.board[playerLocation2].getName().equals("Algebraic!"))
+									{
+										int algebraic = (int) (Math.random() * 3) + 1;
+										
+										if(algebraic == 1)
+											{
+										System.out.println("Jake left you. Give 50% of your money to him.");
+										playerMoney2 = playerMoney2 / 2;
+										checkForBankruptcy();
+											}
+										
+										else if(algebraic == 2)
+											{
+												System.out.println("You pissed Marceline off. Bribe her $400 for your safety.");
+												playerMoney2 = playerMoney2 - 400;
+												checkForBankruptcy();
+											}
+										else
+											{
+												System.out.println("Lady Rainicorn gifted you $250");
+												playerMoney2 = playerMoney2 + 250;
+											}
+									}
+
 							}
 					}	
 //Player Stats				
