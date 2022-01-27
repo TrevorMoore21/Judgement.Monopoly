@@ -203,7 +203,7 @@ public class MonopDriver2
 			{
 //Read AdventureTimeMonopoly
 				 
-				Scanner file = new Scanner(new File("AdventureTimeMonopoly.txt" ));
+				Scanner file = new Scanner(new File("AdventureTimeMonopoly1.txt" ));
 				int numberOfLines = file.nextInt();
 			     
 			      for( int i = 0; i < numberOfLines; i++ )
