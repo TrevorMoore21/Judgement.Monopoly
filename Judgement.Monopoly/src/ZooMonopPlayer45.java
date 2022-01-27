@@ -63,8 +63,8 @@ public class ZooMonopPlayer45
 //Move Player	
 				public static void movePlayer()
 					{
-						//int playerRoll = 4;
-						int playerRoll = DiceRoller2.rollDice(2,6);
+						int playerRoll = 6;
+						//int playerRoll = DiceRoller2.rollDice(2,6);
 						
 			//regulating playerLocation
 						if((playerLocation + playerRoll) <= 39)
@@ -681,6 +681,7 @@ public class ZooMonopPlayer45
 				public static void inJailTurn()
 					{
 						//need to implement cards soon
+						System.out.println("It's your turn " + playerName);
 						System.out.println("You are in jail, would you like to..."
 								+ "\n\n\t1) Pay the $50 fee"
 								+ "\n\t2) Roll for doubles (If you roll doubles 3 consecutive times, you will pay $100)");

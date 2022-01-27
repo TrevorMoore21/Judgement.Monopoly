@@ -668,6 +668,7 @@ public class ZooMonopPlayer46
 				public static void inJailTurn()
 					{
 						//need to implement cards soon
+						System.out.println("It's your turn " + playerName2);
 						System.out.println("You are in jail, would you like to..."
 								+ "\n\n\t1) Pay the $50 fee"
 								+ "\n\t2) Roll for doubles (If you roll doubles 3 consecutive times, you will pay $100)");
