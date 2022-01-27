@@ -213,22 +213,27 @@ public class ZooMonopPlayer46
 										System.out.println("This property is already owned by" + MonopDriver2.board[playerLocation2].getOwner() + ", now you must pay rent.");
 										if(((Properties2) MonopDriver2.board[playerLocation2]).getNumberOfHousesOwned() == 0)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation2]).getBasicRent());
 												playerMoney2 -= ((Properties2) MonopDriver2.board[playerLocation2]).getBasicRent();
 											}
 										else if(((Properties2) MonopDriver2.board[playerLocation2]).getNumberOfHousesOwned() == 1)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation2]).getOneHouseRent());
 												playerMoney2 -= ((Properties2) MonopDriver2.board[playerLocation2]).getOneHouseRent();
 											}
 										else if(((Properties2) MonopDriver2.board[playerLocation2]).getNumberOfHousesOwned() == 2)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation2]).getTwoHouseRent());
 												playerMoney2 -= ((Properties2) MonopDriver2.board[playerLocation2]).getTwoHouseRent();
 											}
 										else if(((Properties2) MonopDriver2.board[playerLocation2]).getNumberOfHousesOwned() == 3)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation2]).getThreeHouseRent());
 												playerMoney2 -= ((Properties2) MonopDriver2.board[playerLocation2]).getThreeHouseRent();
 											}
 										else if(((Properties2) MonopDriver2.board[playerLocation2]).getNumberOfHousesOwned() == 4)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation2]).getHotelRent());
 												playerMoney2 -= ((Properties2) MonopDriver2.board[playerLocation2]).getHotelRent();
 											}
 										
@@ -298,18 +303,22 @@ public class ZooMonopPlayer46
 										System.out.println("This property is already owned by " + MonopDriver2.board[playerLocation2].getOwner() + ", now you must pay rent.");
 										if(((Railroads2) MonopDriver2.board[playerLocation2]).getNumberOfRailroadsOwned() == 1)
 											{
+												System.out.println("You lost $" + ((Railroads2) MonopDriver2.board[playerLocation2]).getOneOwnedRent());
 												playerMoney2 -= ((Railroads2) MonopDriver2.board[playerLocation2]).getOneOwnedRent();
 											}
 										else if(((Railroads2) MonopDriver2.board[playerLocation2]).getNumberOfRailroadsOwned() == 2)
 											{
+												System.out.println("You lost $" + ((Railroads2) MonopDriver2.board[playerLocation2]).getTwoOwnedRent());
 												playerMoney2 -= ((Railroads2) MonopDriver2.board[playerLocation2]).getTwoOwnedRent();
 											}
 										else if(((Railroads2) MonopDriver2.board[playerLocation2]).getNumberOfRailroadsOwned() == 3)
 											{
+												System.out.println("You lost $" + ((Railroads2) MonopDriver2.board[playerLocation2]).getThreeOwnedRent());
 												playerMoney2 -= ((Railroads2) MonopDriver2.board[playerLocation2]).getThreeOwnedRent();
 											}
 										else if(((Railroads2) MonopDriver2.board[playerLocation2]).getNumberOfRailroadsOwned() == 4)
 											{
+												System.out.println("You lost $" + ((Railroads2) MonopDriver2.board[playerLocation2]).getFourOwnedRent());
 												playerMoney2 -= ((Railroads2) MonopDriver2.board[playerLocation2]).getFourOwnedRent();
 											}
 										
@@ -383,7 +392,7 @@ public class ZooMonopPlayer46
 												
 												int dr1 = DiceRoller2.rollDice(2,6)*4;
 												playerMoney2 -= dr1;
-												System.out.println("You lost " + dr1);
+												System.out.println("You lost $" + dr1);
 												checkForBankruptcy();
 
 											}
@@ -392,7 +401,7 @@ public class ZooMonopPlayer46
 												
 												int dr2 = DiceRoller2.rollDice(2,6)*10;
 												playerMoney2 -= dr2;
-												System.out.println("You lost " + dr2);
+												System.out.println("You lost $" + dr2);
 												checkForBankruptcy();
 											
 											}		

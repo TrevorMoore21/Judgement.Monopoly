@@ -214,22 +214,27 @@ public class ZooMonopPlayer45
 										System.out.println("This property is already owned by" + MonopDriver2.board[playerLocation].getOwner() + ", now you must pay rent.");
 										if(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 0)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation]).getBasicRent());
 												playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getBasicRent();
 											}
 										else if(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 1)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation]).getOneHouseRent());
 												playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getOneHouseRent();
 											}
 										else if(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 2)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation]).getTwoHouseRent());
 												playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getTwoHouseRent();
 											}
 										else if(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 3)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation]).getThreeHouseRent());
 												playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getThreeHouseRent();
 											}
 										else if(((Properties2) MonopDriver2.board[playerLocation]).getNumberOfHousesOwned() == 4)
 											{
+												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation]).getHotelRent());
 												playerMoney -= ((Properties2) MonopDriver2.board[playerLocation]).getHotelRent();
 											}
 										
@@ -299,18 +304,22 @@ public class ZooMonopPlayer45
 										System.out.println("This property is already owned by " + MonopDriver2.board[playerLocation].getOwner() + ", now you must pay rent.");
 										if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfRailroadsOwned() == 1)
 											{
+												System.out.println("You lost $" + ((Railroads2) MonopDriver2.board[playerLocation]).getOneOwnedRent());
 												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getOneOwnedRent();
 											}
 										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfRailroadsOwned() == 2)
 											{
+												System.out.println("You lost $" + ((Railroads2) MonopDriver2.board[playerLocation]).getTwoOwnedRent());
 												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getTwoOwnedRent();
 											}
 										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfRailroadsOwned() == 3)
 											{
+												System.out.println("You lost $" + ((Railroads2) MonopDriver2.board[playerLocation]).getThreeOwnedRent());
 												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getThreeOwnedRent();
 											}
 										else if(((Railroads2) MonopDriver2.board[playerLocation]).getNumberOfRailroadsOwned() == 4)
 											{
+												System.out.println("You lost $" + ((Railroads2) MonopDriver2.board[playerLocation]).getFourOwnedRent());
 												playerMoney -= ((Railroads2) MonopDriver2.board[playerLocation]).getFourOwnedRent();
 											}
 										
@@ -384,7 +393,7 @@ public class ZooMonopPlayer45
 												
 												int dr1 = DiceRoller2.rollDice(2,6)*4;
 												playerMoney -= dr1;
-												System.out.println("You lost " + dr1);
+												System.out.println("You lost $" + dr1);
 												checkForBankruptcy();
 
 											}
@@ -393,7 +402,7 @@ public class ZooMonopPlayer45
 												
 												int dr2 = DiceRoller2.rollDice(2,6)*10;
 												playerMoney -= dr2;
-												System.out.println("You lost " + dr2);
+												System.out.println("You lost $" + dr2);
 												checkForBankruptcy();
 											
 											}		
