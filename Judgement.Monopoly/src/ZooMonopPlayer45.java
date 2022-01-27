@@ -474,7 +474,7 @@ public class ZooMonopPlayer45
 										
 										if(chanceNumber == 1)
 											{
-										System.out.println("You're wife left you. Give 50% of your money to her.");
+										System.out.println("Your wife left you. Give 50% of your money to her.");
 										playerMoney = playerMoney / 2;
 										checkForBankruptcy();
 											}
