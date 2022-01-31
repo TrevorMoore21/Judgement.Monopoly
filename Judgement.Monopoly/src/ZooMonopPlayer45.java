@@ -63,7 +63,7 @@ public class ZooMonopPlayer45
 //Move Player	
 				public static void movePlayer()
 					{
-						//int playerRoll = 6;
+						//int playerRoll = 4;
 						int playerRoll = DiceRoller2.rollDice(2,6);
 						
 			//regulating playerLocation
