@@ -210,7 +210,7 @@ public class ZooMonopPlayer46
 								
 								else
 									{
-										System.out.println("This property is already owned by" + MonopDriver2.board[playerLocation2].getOwner() + ", now you must pay rent.");
+										System.out.println("This property is already owned by " + MonopDriver2.board[playerLocation2].getOwner() + ", now you must pay rent.");
 										if(((Properties2) MonopDriver2.board[playerLocation2]).getNumberOfHousesOwned() == 0)
 											{
 												System.out.println("You lost $" + ((Properties2) MonopDriver2.board[playerLocation2]).getBasicRent());
